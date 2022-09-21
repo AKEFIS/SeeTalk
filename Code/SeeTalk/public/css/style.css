@@ -1,0 +1,276 @@
+:root {
+    --main-bg-color: #5b646b;
+    --secondary-bg-color: #2c2d31;
+    --button-color: #41424e;
+
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: var(--main-bg-color);
+    color: rgb(216, 216, 216);
+    min-height: 100vh;
+    min-width: fit-content;
+}
+
+header h1 {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 3em;
+
+}
+
+footer {
+    background-color: #26272b;
+    height: 100px;
+}
+
+footer h2 {
+    margin: 0;
+}
+
+.grid-accueil {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.grid-accueil .img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background-color: var(--button-color);
+    margin-top: 50px;
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+.grid-accueil .text {
+    padding-inline: 20px;
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+
+
+form#connexion {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-bg-color);
+    height: fit-content;
+    padding-bottom: 20vh;
+}
+
+form .title {
+    grid-column: 2 / 3;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+form .label-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+form label, form input {
+    font-size: 1.1em;
+}
+
+form label {
+    padding-bottom: 5px;
+}
+
+form input {
+    max-width: 260px;
+    height: 27px;
+    width: 90vw;
+    margin-bottom: 16px;
+}
+
+form .submit-button {
+    padding-inline: 53px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: fit-content;
+    margin-inline: auto;
+    margin-top: 30px;
+    background-color: var(--button-color);
+    border: transparent;
+    border-radius: 12px;
+}
+
+.list-reunions {
+    background-color: var(--secondary-bg-color);
+    color: #26272b;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.list-reunions .creer-reunion {
+    background-color: rgb(221, 221, 221);
+    width: fit-content;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    margin-block: 20px;
+}
+
+.list-reunions .inner {
+    background-color: rgb(221, 221, 221);
+    height: fit-content;
+    padding-block: 20px;
+    width: 100%;
+}
+
+.list-reunions .inner h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.list-reunions .inner .reunion {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+}
+
+.reunion {
+    margin: 15px 15px 0 15px;
+}
+
+.reunion .row {
+    display: flex;
+    margin: 10px;
+}
+
+.reunion h3 {
+    margin: 0;
+    margin-right: auto;
+}
+
+.reunion .objet {
+    margin-inline: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 480px) {
+
+
+
+    form#connexion {
+        height: fit-content;
+        border: transparent;
+        border-radius: 12px;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        padding-bottom: 70px;
+        margin-bottom: 70px;
+        max-width: 500px;
+        margin-inline: auto;
+    }
+
+    .list-reunions {
+        padding-inline: 6%;
+    }
+
+}
+
+@media screen and (min-width: 860px) {
+
+    .container {
+        display: grid;
+        grid-template: auto 1fr 150px / 100%;
+        min-height: 100vh;
+    }
+
+    .container-grid {
+        grid-template: 100% / 1fr fit-content 1fr;
+    }
+
+    .grid-accueil {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 5%;
+    }
+
+    .grid-accueil .img {
+        max-width: none;
+    }
+
+    .grid-accueil .text {
+        align-self: center;
+    }
+
+    .grid-accueil .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+    }
+
+    .grid-accueil .row.reverse {
+        direction: rtl;
+    }
+
+    header {
+        grid-column: 1/4;
+    }
+
+    header h1 {
+        padding: 0;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    footer {
+        grid-column: 1/4;
+        grid-row: 3/3;
+        height: 100%;
+        background-color: #515a61;
+    }
+
+    form#connexion {
+        max-width: 600px;
+    }
+
+    .list-reunions {
+        max-height: 70vh;
+        min-width: 800px;
+        width: 75%;
+        grid-column: 2/3;
+        margin-inline: auto;
+        padding: 30px;
+        margin-bottom: 70px;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+    }
+
+    .list-reunions .creer-reunion {
+        font-size: 1.5em;
+        margin-left: 20px;
+        height: min-content;
+        align-self: end;
+        margin-bottom: 25px;
+    }
+
+    .list-reunions .inner {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+
+    .list-reunions .scroll {
+        height: 500px;
+        box-sizing: border-box;
+        overflow: scroll;
+        padding-bottom: 40px;
+    }
+}
