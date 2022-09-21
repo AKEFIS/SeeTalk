@@ -1,24 +1,27 @@
-<table>
-<thead>
-        <tr>
-            <th>The table header</th>
-            <th>The table header</th>
-            <th>The table header</th>
-            <th>The table header</th>
-            <th>The table header</th>
-            <th>The table header</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php for($i = 0; $i < 5; $i++){} ?>
-        <tr>
-            <td>The table body</td>
-            <td>with two columns</td>
-            <td>with two columns</td>
-            <td>with two columns</td>
-            <td>with two columns</td>
-            <td>with two columns</td>
-            <td>with two columns</td>
-        </tr>
-    </tbody>
-</table>
+<div class="utilisateurs-container">
+    <table class="utilisateurs">
+        <thead>
+            <tr>
+                <th>The table header</th>
+                <th>The table header</th>
+                <th>The table header</th>
+                <th>The table header</th>
+                <th>The table header</th>
+                <th>The table header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ($i = 0; $i < 5; $i++) { ?>
+                <tr>
+                    <td>The table body</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>

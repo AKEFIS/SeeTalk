@@ -161,6 +161,20 @@ form .submit-button {
     margin-bottom: 20px;
 }
 
+.utilisateurs-container{
+    width: 1/3vw;
+    overflow: scroll;
+}
+
+table.utilisateurs {
+    display: block;
+    width: max-content;
+}
+
+table.utilisateurs tbody td{
+
+}
+
 
 @media screen and (min-width: 480px) {
 
