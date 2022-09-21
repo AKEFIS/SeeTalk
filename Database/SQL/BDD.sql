@@ -6,7 +6,7 @@ CREATE TABLE `ACTUALITE`  (
   PRIMARY KEY (`id_actu`)
 );
 
-CREATE TABLE `GROUPE`  (
+CREATE TABLE `GROUP`  (
   `id_group` int NOT NULL,
   `group_name` varchar(255) NOT NULL,
   `group_users` varchar(255) NOT NULL,
@@ -14,28 +14,36 @@ CREATE TABLE `GROUPE`  (
   PRIMARY KEY (`id_group`)
 );
 
-CREATE TABLE `GROUPE_MSG`  (
+CREATE TABLE `GROUP_MSG`  (
   `message_text` text NOT NULL,
   `message_date` date NOT NULL,
-  `message_readBy` varchar(255) NULL
+  `message_readBy` varchar(255) NULL,
+  `id_message` int NOT NULL,
+  PRIMARY KEY (`id_message`)
 );
 
 CREATE TABLE `PERSONAL_MSG`  (
   `message_text` text NOT NULL,
   `message_date` date NOT NULL,
-  `message_read` tinyint NOT NULL DEFAULT 0
+  `message_read` tinyint NOT NULL DEFAULT 0,
+  `id_message` int NOT NULL,
+  PRIMARY KEY (`id_message`)
 );
 
 CREATE TABLE `REUNION`  (
   `nom_reunion` varchar(255) NULL,
   `explication_reunion` varchar(255) NULL,
   `heure_reunion` time NULL,
-  `jour_reunion` date NULL
+  `jour_reunion` date NULL,
+  `id_reunion` int NOT NULL,
+  PRIMARY KEY (`id_reunion`)
 );
 
 CREATE TABLE `USER_TO_USER`  (
   `date` date NOT NULL,
-  `temps_reunion` varchar(255) NOT NULL
+  `temps_reunion` varchar(255) NOT NULL,
+  `id_appel` int NOT NULL,
+  PRIMARY KEY (`id_appel`)
 );
 
 CREATE TABLE `UTILISATEUR`  (
@@ -53,13 +61,15 @@ CREATE TABLE `UTILISATEUR`  (
 CREATE TABLE `VISIO_GROUP`  (
   `temps_reunion` time NOT NULL,
   `personnes` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `id_group_visio` int NOT NULL,
+  PRIMARY KEY (`id_group_visio`)
 );
 
-ALTER TABLE `GROUPE` ADD CONSTRAINT `UTILISER` FOREIGN KEY () REFERENCES `GROUPE_MSG` ();
-ALTER TABLE `GROUPE` ADD CONSTRAINT `APELLER_copy_1` FOREIGN KEY () REFERENCES `VISIO_GROUP` ();
-ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `       ENVOYER` FOREIGN KEY () REFERENCES `PERSONAL_MSG` ();
-ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `ENVOYER` FOREIGN KEY () REFERENCES `GROUPE_MSG` ();
-ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `APELLER` FOREIGN KEY () REFERENCES `USER_TO_USER` ();
-ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `CRÉER` FOREIGN KEY () REFERENCES `REUNION` ();
+ALTER TABLE `GROUP` ADD CONSTRAINT `UTILISER` FOREIGN KEY (`id_group`) REFERENCES `GROUP_MSG` (`id_message`);
+ALTER TABLE `GROUP` ADD CONSTRAINT `APELLER_copy_1` FOREIGN KEY (`id_group`) REFERENCES `VISIO_GROUP` (`id_group_visio`);
+ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `ENVOYER_MSG_PERSO` FOREIGN KEY (`id_user`) REFERENCES `PERSONAL_MSG` (`id_message`);
+ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `ENVOYER_MSG_GRP` FOREIGN KEY (`id_user`) REFERENCES `GROUP_MSG` (`id_message`);
+ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `APELLER` FOREIGN KEY (`id_user`) REFERENCES `USER_TO_USER` (`id_appel`);
+ALTER TABLE `UTILISATEUR` ADD CONSTRAINT `CREER` FOREIGN KEY (`id_user`) REFERENCES `REUNION` (`id_reunion`);
 
