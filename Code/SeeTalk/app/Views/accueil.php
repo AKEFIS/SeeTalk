@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
 
 <div class="grid-accueil">
     <div class="row">
@@ -16,5 +15,3 @@
         <div class="img"></div>
     </div>
 </div>
-
-<?php include('footer.php'); ?>

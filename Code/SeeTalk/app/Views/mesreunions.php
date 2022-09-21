@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+
 
 <div class="container-grid">
     <div class="list-reunions">
@@ -23,5 +23,3 @@
         <div class="creer-reunion">Créer une réunion</div>
     </div>
 </div>
-
-<?php include('footer.php'); ?>

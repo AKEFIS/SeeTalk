@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+
 <div class="container-grid">
     <form action="" method="post" id="connexion">
         <h2 class="title">Connexion</h2>
@@ -13,5 +13,3 @@
         <div class="submit-button" type="submit">Connexion</div>
     </form>
 </div>
-
-<?php include('footer.php'); ?>
