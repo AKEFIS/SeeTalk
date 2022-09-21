@@ -66,100 +66,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "GROUP_MSG",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "message_text",
-                "type": "CHAR VARYING",
-                "length": 1024,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "message_text"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "message_date",
-                "type": "DATE",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "message_date"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "message_readBy",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "message_readBy"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": []
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "VISIO_GROUP",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "temps_reunion",
-                "type": "TIME",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "temps_reunion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "personnes",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "personnes"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "date",
-                "type": "DATE",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "date"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": []
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "ACTUALITE",
             "comment": "",
             "oldName": "",
@@ -262,65 +168,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "RÉUNION",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "nom_reunion",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "nom_reunion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "explication_reunion",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "explication_reunion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "heure_reunion",
-                "type": "TIME",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "heure_reunion"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "jour_reunion",
-                "type": "DATE",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "jour_reunion"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": []
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "UTILISATEUR",
             "comment": "",
             "oldName": "",
@@ -399,7 +246,7 @@
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "contact",
+                "name": "contact_user",
                 "type": "CHAR VARYING",
                 "length": 1024,
                 "decimals": 0,
@@ -407,7 +254,7 @@
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "contact"
+                "oldName": "contact_user"
               },
               {
                 "objectType": "TableField_LOGICAL",
@@ -440,7 +287,7 @@
                 "name": "ENVOYER",
                 "fields": [],
                 "referencedSchema": "default",
-                "referencedTable": "GROUP_MSG",
+                "referencedTable": "GROUPE_MSG",
                 "referencedFields": [],
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "OneOrManyRelationship",
@@ -464,7 +311,7 @@
                 "name": "CRÉER",
                 "fields": [],
                 "referencedSchema": "default",
-                "referencedTable": "RÉUNION",
+                "referencedTable": "REUNION",
                 "referencedFields": [],
                 "sourceCardinality": "OneOrManyRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
@@ -485,7 +332,113 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "GROUP",
+            "name": "VISIO_GROUP",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "temps_reunion",
+                "type": "TIME",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "temps_reunion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "personnes",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "personnes"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "date"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "REUNION",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nom_reunion",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nom_reunion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "explication_reunion",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "explication_reunion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "heure_reunion",
+                "type": "TIME",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "heure_reunion"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "jour_reunion",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "jour_reunion"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "GROUPE",
             "comment": "",
             "oldName": "",
             "fields": [
@@ -544,7 +497,7 @@
                 "name": "UTILISER",
                 "fields": [],
                 "referencedSchema": "default",
-                "referencedTable": "GROUP_MSG",
+                "referencedTable": "GROUPE_MSG",
                 "referencedFields": [],
                 "sourceCardinality": "OneOrManyRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
@@ -574,6 +527,53 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "GROUPE_MSG",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "message_text",
+                "type": "CHAR VARYING",
+                "length": 1024,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "message_text"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "message_date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "message_date"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "message_readBy",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "message_readBy"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
           }
         ]
       }
@@ -628,7 +628,7 @@
         {
           "type": "table",
           "schemaName": "default",
-          "tableName": "GROUP_MSG",
+          "tableName": "GROUPE_MSG",
           "x": 876,
           "y": 490,
           "width": 200,
@@ -644,7 +644,7 @@
         {
           "type": "table",
           "schemaName": "default",
-          "tableName": "GROUP",
+          "tableName": "GROUPE",
           "x": 876,
           "y": 820,
           "width": 200,
@@ -708,7 +708,7 @@
         {
           "type": "table",
           "schemaName": "default",
-          "tableName": "RÉUNION",
+          "tableName": "REUNION",
           "x": 484,
           "y": 882,
           "width": 200,
@@ -800,7 +800,7 @@
         },
         {
           "name": "UTILISER",
-          "sourceTableName": "GROUP",
+          "sourceTableName": "GROUPE",
           "sourceSchemaName": "default",
           "lineWidth": 1,
           "visible": true,
@@ -834,7 +834,7 @@
         },
         {
           "name": "APELLER",
-          "sourceTableName": "GROUP",
+          "sourceTableName": "GROUPE",
           "sourceSchemaName": "default",
           "lineWidth": 1,
           "visible": true,
