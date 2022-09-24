@@ -161,18 +161,37 @@ form .submit-button {
     margin-bottom: 20px;
 }
 
-.utilisateurs-container{
-    width: 1/3vw;
-    overflow: scroll;
+.utilisateurs-container {
+    width: 100vw;
+    overflow: auto;
+    height: 70vh;
 }
 
 table.utilisateurs {
     display: block;
+    border: none;
     width: max-content;
+    height: 100%;
+    color: var(--main-bg-color);
+    background-color: rgb(223, 223, 223);
 }
 
-table.utilisateurs tbody td{
+table.utilisateurs thead {
+    background-color: var(--secondary-bg-color);
+    color: rgb(216, 216, 216);
+}
 
+table.utilisateurs tbody {
+    background-color: rgb(240, 240, 240);
+}
+
+table.utilisateurs th, table.utilisateurs td {
+    padding: 1em;
+}
+
+table.utilisateurs .end {
+    background-color: var(--secondary-bg-color);
+    color: rgb(216, 216, 216);
 }
 
 
@@ -194,6 +213,10 @@ table.utilisateurs tbody td{
 
     .list-reunions {
         padding-inline: 6%;
+    }
+
+    table.utilisateurs {
+        margin-inline: auto;
     }
 
 }
@@ -284,7 +307,7 @@ table.utilisateurs tbody td{
     .list-reunions .scroll {
         height: 500px;
         box-sizing: border-box;
-        overflow: scroll;
+        overflow: auto;
         padding-bottom: 40px;
     }
 }
