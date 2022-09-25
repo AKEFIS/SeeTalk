@@ -1,4 +1,3 @@
-
 <div class="container-grid">
     <form action="" method="post" id="connexion">
         <h2 class="title">Connexion</h2>
@@ -10,6 +9,6 @@
             <label for="mdp">Mot de passe:</label>
             <input type="text" name="mdp">
         </div>
-        <div class="submit-button" type="submit">Connexion</div>
+        <input class="submit-button" type="submit" value="valider">
     </form>
 </div>

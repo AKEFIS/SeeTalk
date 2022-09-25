@@ -17,6 +17,6 @@
             <label for="verif-mdp">Vérification Mot de passe:</label>
             <input type="text" name="verif-mdp">
         </div>
-        <div class="submit-button" type="submit">Connexion</div>
+        <input class="submit-button" type="submit" value="Connexion">
     </form>
 </div>

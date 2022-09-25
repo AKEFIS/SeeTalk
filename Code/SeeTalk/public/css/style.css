@@ -5,8 +5,10 @@
 
 }
 
+
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -16,13 +18,68 @@ body {
     min-width: fit-content;
 }
 
+header {
+    height: min-content;
+}
+
+header .mobile {
+    display: flex;
+    justify-content: space-between;
+}
+
 header h1 {
     margin: 0;
     padding-top: 20px;
     padding-bottom: 30px;
     text-align: center;
     font-size: 3em;
+}
 
+header img.menu-button {
+    display: block;
+}
+
+header .menu {
+    max-height: 0;
+    margin-inline: auto;
+    overflow: hidden;
+    width: max-content;
+    margin-bottom: 0;
+    transition: max-height .5s ease-out, margin-bottom .7s ease-out;
+}
+
+header .menu.active {
+    max-height: 300px;
+    margin-bottom: 20px;
+    transition: max-height 1s ease-in-out, margin-bottom .7s ease-in-out;
+}
+
+
+header .menu a {
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+    font-size: 1.7em;
+    text-align: center;
+    border-style: transparent;
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    opacity: 0;
+    padding-inline: 20px;
+    transition: opacity .5s ease-in-out;
+}
+
+header .menu.active a {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+header .menu a.active {
+    background-color: var(--button-color);
+}
+
+header .menu a:hover {
+    background-color: var(--button-color);
 }
 
 footer {
@@ -88,7 +145,7 @@ form label {
     padding-bottom: 5px;
 }
 
-form input {
+form input[type="text"] {
     max-width: 260px;
     height: 27px;
     width: 90vw;
@@ -103,8 +160,13 @@ form .submit-button {
     margin-inline: auto;
     margin-top: 30px;
     background-color: var(--button-color);
+    color: rgb(216, 216, 216);
     border: transparent;
     border-radius: 12px;
+}
+
+form .submit-button:hover {
+    box-shadow: rgb(22, 22, 22) 2px 2px 2px;
 }
 
 .list-reunions {
@@ -197,8 +259,6 @@ table.utilisateurs .end {
 
 @media screen and (min-width: 480px) {
 
-
-
     form#connexion {
         height: fit-content;
         border: transparent;
@@ -222,6 +282,20 @@ table.utilisateurs .end {
 }
 
 @media screen and (min-width: 860px) {
+
+    header .menu {
+        max-height: 500px;
+        display: flex;
+        margin-inline: 0;
+        width: auto;
+        justify-content: space-evenly;
+    }
+
+    header .menu a {
+        display: inline-block;
+        opacity: 1;
+        margin-block: 20px;
+    }
 
     .container {
         display: grid;

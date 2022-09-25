@@ -12,5 +12,16 @@
 <body>
     <div class="container">
         <header>
-            <h1>SeeTalk</h1>
+            <div class="mobile">
+                <a href="" class="logo"><img src="" alt="">logo ici</a>
+                <img class="menu-button" src="img/menu-icon-60.svg">
+            </div>
+            <div class="menu">
+                <a href="accueil" class="nav-link">Accueil</a>
+                <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
+                <a href="inscription" class="nav-link">Inscription</a>
+                <a href="login" class="nav-link">Connexion</a>
+                <a href="deconnexion" class="nav-link">Déconnexion</a>
+            </div>
         </header>
+        <script src="js/header.js"></script>
