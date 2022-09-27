@@ -42,6 +42,10 @@ $routes->get('gestion_utilisateurs', 'Pages::gestion_utilisateurs');
 $routes->get('inscription', 'Pages::inscription');
 $routes->get('login', 'Pages::login');
 $routes->get('mesreunions', 'Pages::mesreunions');
+$routes->get('add_contact', 'Pages::add_contact');
+$routes->get('fiche_user', 'Pages::fiche_user');
+$routes->get('group', 'Pages::group');
+$routes->get('creation', 'Pages::creation');
 
 /*
  * --------------------------------------------------------------------

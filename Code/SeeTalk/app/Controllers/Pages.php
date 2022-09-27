@@ -40,4 +40,28 @@ class Pages extends BaseController
         echo view('mesreunions');
         echo view('template/footer');
     }
+
+    public function add_contact(){
+        echo view('template/header');
+        echo view('add_contact');
+        echo view('template/footer');
+    }
+
+    public function creation(){
+        echo view('template/header');
+        echo view('creation');
+        echo view('template/footer');
+    }
+
+    public function fiche_user(){
+        echo view('template/header');
+        echo view('fiche_user');
+        echo view('template/footer');
+    }
+
+    public function group(){
+        echo view('template/header');
+        echo view('group');
+        echo view('template/footer');
+    }
 }

@@ -1,7 +1,9 @@
 :root {
-    --main-bg-color: #5b646b;
-    --secondary-bg-color: #2c2d31;
     --button-color: #41424e;
+    --main-color : #5B646B;
+    --bg-element : #2C2D31;
+    --font-weight : 100;
+    --font-text : 'Nanum Gothic', sans-serif;
 
 }
 
@@ -12,7 +14,7 @@ body {
 }
 
 .container {
-    background-color: var(--main-bg-color);
+    background-color: var(--main-color);
     color: rgb(216, 216, 216);
     min-height: 100vh;
     min-width: fit-content;
@@ -49,7 +51,7 @@ header .menu {
 }
 
 header .menu.active {
-    max-height: 300px;
+    max-height: 500px;
     margin-bottom: 20px;
     transition: max-height 1s ease-in-out, margin-bottom .7s ease-in-out;
 }
@@ -116,7 +118,7 @@ footer h2 {
 form#connexion {
     display: flex;
     flex-direction: column;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--bg-element);
     height: fit-content;
     padding-bottom: 20vh;
 }
@@ -170,7 +172,7 @@ form .submit-button:hover {
 }
 
 .list-reunions {
-    background-color: var(--secondary-bg-color);
+    background-color: var(--bg-element);
     color: #26272b;
     display: flex;
     flex-direction: column-reverse;
@@ -234,12 +236,12 @@ table.utilisateurs {
     border: none;
     width: max-content;
     height: 100%;
-    color: var(--main-bg-color);
+    color: var(--main-color);
     background-color: rgb(223, 223, 223);
 }
 
 table.utilisateurs thead {
-    background-color: var(--secondary-bg-color);
+    background-color: var(--bg-element);
     color: rgb(216, 216, 216);
 }
 
@@ -252,7 +254,7 @@ table.utilisateurs th, table.utilisateurs td {
 }
 
 table.utilisateurs .end {
-    background-color: var(--secondary-bg-color);
+    background-color: var(--bg-element);
     color: rgb(216, 216, 216);
 }
 
@@ -278,7 +280,6 @@ table.utilisateurs .end {
     table.utilisateurs {
         margin-inline: auto;
     }
-
 }
 
 @media screen and (min-width: 860px) {
@@ -295,6 +296,8 @@ table.utilisateurs .end {
         display: inline-block;
         opacity: 1;
         margin-block: 20px;
+        font-size: 2vw;
+        padding-inline: .6vw;
     }
 
     .container {
