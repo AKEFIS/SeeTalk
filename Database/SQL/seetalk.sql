@@ -1,14 +1,3 @@
-<<<<<<< Updated upstream
-DROP DATABASE IF EXISTS SeeTalk;
-
-CREATE DATABASE IF NOT EXISTS SeeTalk;
-USE SeeTalk_bdd;
-# -----------------------------------------------------------------------------
-#       TABLE : UTILISATEUR
-# -----------------------------------------------------------------------------
-
-=======
->>>>>>> Stashed changes
 CREATE TABLE IF NOT EXISTS UTILISATEUR
  (
    ID_USER INTEGER(2) NOT NULL AUTO_INCREMENT ,
