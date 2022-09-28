@@ -66,13 +66,13 @@ class Database extends Config
 
         'DSN'      => '',
 
-        'hostname' => 'localhost',
+        'hostname' => 'mysql-seetalk.alwaysdata.net',
 
-        'username' => 'root',
+        'username' => 'seetalk',
 
-        'password' => '',
+        'password' => 'Btssio82300',
 
-        'database' => 'SeeTalk',
+        'database' => 'seetalk_bdd',
 
         'DBDriver' => 'MySQLi',
 
