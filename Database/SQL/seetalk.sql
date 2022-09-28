@@ -1,263 +1,247 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le : mer. 28 sep. 2022 à 10:31
--- Version du serveur : 10.4.24-MariaDB
--- Version de PHP : 8.1.6
+DROP DATABASE IF EXISTS SeeTalk;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE DATABASE IF NOT EXISTS SeeTalk;
+USE SeeTalk;
+# -----------------------------------------------------------------------------
+#       TABLE : UTILISATEUR
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS UTILISATEUR
+ (
+   ID_USER INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   PSEUDO VARCHAR(255) NULL  ,
+   NOM VARCHAR(255) NULL  ,
+   PRENOM VARCHAR(255) NULL  ,
+   PASSWORD VARCHAR(255) NULL  ,
+   SOCIETE VARCHAR(255) NULL  ,
+   BIO TEXT NULL  ,
+   EMAIL VARCHAR(255) NULL  ,
+   TELEPHONE VARCHAR(255) NULL  ,
+   IMG VARCHAR(255) NULL  
+   , PRIMARY KEY (ID_USER) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : APPEL_VIDEO
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS APPEL_VIDEO
+ (
+   ID_APPEL INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   DATE_APPEL timestamp NULL  ,
+   DUREE INTEGER(2) NULL  
+   , PRIMARY KEY (ID_APPEL) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : ACTUALITE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS ACTUALITE
+ (
+   ID_ACTU INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   TITRE VARCHAR(255) NULL  ,
+   MESSAGE TEXT NULL  
+   , PRIMARY KEY (ID_ACTU) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : MESSAGE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS MESSAGE
+ (
+   ID_MESSAGE INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   CONTENU TEXT NULL  ,
+   DATE_MESSAGE timestamp NULL  
+   , PRIMARY KEY (ID_MESSAGE) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : REUNION
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS REUNION
+ (
+   ID_REUNION INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   NOM VARCHAR(255) NULL  ,
+   DESCRIPTION TEXT NULL  ,
+   DATE_REUNION timestamp NULL  
+   , PRIMARY KEY (ID_REUNION) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : APPELER
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS APPELER
+ (
+   ID_APPEL INTEGER(2) NOT NULL  ,
+   ID_USER INTEGER(2) NOT NULL  
+   , PRIMARY KEY (ID_APPEL,ID_USER) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE APPELER
+# -----------------------------------------------------------------------------
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE  INDEX I_FK_APPELER_APPEL_VIDEO
+     ON APPELER (ID_APPEL ASC);
 
---
--- Base de données : `seetalk`
---
+CREATE  INDEX I_FK_APPELER_UTILISATEUR
+     ON APPELER (ID_USER ASC);
 
--- --------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : RECEVOIR
+# -----------------------------------------------------------------------------
 
---
--- Structure de la table `actualite`
---
+CREATE TABLE IF NOT EXISTS RECEVOIR
+ (
+   ID_MESSAGE INTEGER(2) NOT NULL  ,
+   ID_USER INTEGER(2) NOT NULL  
+   , PRIMARY KEY (ID_MESSAGE,ID_USER) 
+ ) 
+ comment = "";
 
-CREATE TABLE `actualite` (
-  `ID_ACTU` int(2) NOT NULL,
-  `TITRE` char(32) DEFAULT NULL,
-  `MESSAGE` char(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE RECEVOIR
+# -----------------------------------------------------------------------------
 
--- --------------------------------------------------------
 
---
--- Structure de la table `appeler`
---
+CREATE  INDEX I_FK_RECEVOIR_MESSAGE
+     ON RECEVOIR (ID_MESSAGE ASC);
 
-CREATE TABLE `appeler` (
-  `ID_APPEL` int(2) NOT NULL,
-  `ID_USER` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE  INDEX I_FK_RECEVOIR_UTILISATEUR
+     ON RECEVOIR (ID_USER ASC);
 
--- --------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : CREER
+# -----------------------------------------------------------------------------
 
---
--- Structure de la table `appel_video`
---
+CREATE TABLE IF NOT EXISTS CREER
+ (
+   ID_USER INTEGER(2) NOT NULL  ,
+   ID_REUNION INTEGER(2) NOT NULL  
+   , PRIMARY KEY (ID_USER,ID_REUNION) 
+ ) 
+ comment = "";
 
-CREATE TABLE `appel_video` (
-  `ID_APPEL` int(2) NOT NULL,
-  `DATE_APPEL` datetime DEFAULT NULL,
-  `DUREE` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE CREER
+# -----------------------------------------------------------------------------
 
--- --------------------------------------------------------
 
---
--- Structure de la table `creer`
---
+CREATE  INDEX I_FK_CREER_UTILISATEUR
+     ON CREER (ID_USER ASC);
 
-CREATE TABLE `creer` (
-  `ID_USER` int(2) NOT NULL,
-  `ID_REUNION` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE  INDEX I_FK_CREER_REUNION
+     ON CREER (ID_REUNION ASC);
 
--- --------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : ETRE_APPELE
+# -----------------------------------------------------------------------------
 
---
--- Structure de la table `envoyer`
---
+CREATE TABLE IF NOT EXISTS ETRE_APPELE
+ (
+   ID_USER INTEGER(2) NOT NULL  ,
+   ID_APPEL INTEGER(2) NOT NULL  
+   , PRIMARY KEY (ID_USER,ID_APPEL) 
+ ) 
+ comment = "";
 
-CREATE TABLE `envoyer` (
-  `ID_USER` int(2) NOT NULL,
-  `ID_MESSAGE` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE ETRE_APPELE
+# -----------------------------------------------------------------------------
 
--- --------------------------------------------------------
 
---
--- Structure de la table `etre_appele`
---
+CREATE  INDEX I_FK_ETRE_APPELE_UTILISATEUR
+     ON ETRE_APPELE (ID_USER ASC);
 
-CREATE TABLE `etre_appele` (
-  `ID_USER` int(2) NOT NULL,
-  `ID_APPEL` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE  INDEX I_FK_ETRE_APPELE_APPEL_VIDEO
+     ON ETRE_APPELE (ID_APPEL ASC);
 
--- --------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : ENVOYER
+# -----------------------------------------------------------------------------
 
---
--- Structure de la table `message`
---
+CREATE TABLE IF NOT EXISTS ENVOYER
+ (
+   ID_USER INTEGER(2) NOT NULL  ,
+   ID_MESSAGE INTEGER(2) NOT NULL  
+   , PRIMARY KEY (ID_USER,ID_MESSAGE) 
+ ) 
+ comment = "";
 
-CREATE TABLE `message` (
-  `ID_MESSAGE` int(2) NOT NULL,
-  `CONTENU` char(32) DEFAULT NULL,
-  `DATE_MESSAGE` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE ENVOYER
+# -----------------------------------------------------------------------------
 
--- --------------------------------------------------------
 
---
--- Structure de la table `recevoir`
---
+CREATE  INDEX I_FK_ENVOYER_UTILISATEUR
+     ON ENVOYER (ID_USER ASC);
 
-CREATE TABLE `recevoir` (
-  `ID_MESSAGE` int(2) NOT NULL,
-  `ID_USER` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE  INDEX I_FK_ENVOYER_MESSAGE
+     ON ENVOYER (ID_MESSAGE ASC);
 
--- --------------------------------------------------------
 
---
--- Structure de la table `reunion`
---
+# -----------------------------------------------------------------------------
+#       CREATION DES REFERENCES DE TABLE
+# -----------------------------------------------------------------------------
 
-CREATE TABLE `reunion` (
-  `ID_REUNION` int(2) NOT NULL,
-  `NOM` char(32) DEFAULT NULL,
-  `DESCRIPTION` char(32) DEFAULT NULL,
-  `DATE_REUNION` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+ALTER TABLE APPELER 
+  ADD FOREIGN KEY FK_APPELER_APPEL_VIDEO (ID_APPEL)
+      REFERENCES APPEL_VIDEO (ID_APPEL) ;
 
---
--- Structure de la table `utilisateur`
---
 
-CREATE TABLE `utilisateur` (
-  `ID_USER` int(2) NOT NULL,
-  `PSEUDO` char(32) DEFAULT NULL,
-  `NOM` char(32) DEFAULT NULL,
-  `PRENOM` char(32) DEFAULT NULL,
-  `PASSWORD` char(32) DEFAULT NULL,
-  `SOCIETE` char(32) DEFAULT NULL,
-  `BIO` char(32) DEFAULT NULL,
-  `EMAIL` char(32) DEFAULT NULL,
-  `TELEPHONE` char(32) DEFAULT NULL,
-  `IMG` char(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ALTER TABLE APPELER 
+  ADD FOREIGN KEY FK_APPELER_UTILISATEUR (ID_USER)
+      REFERENCES UTILISATEUR (ID_USER) ;
 
---
--- Index pour les tables déchargées
---
 
---
--- Index pour la table `actualite`
---
-ALTER TABLE `actualite`
-  ADD PRIMARY KEY (`ID_ACTU`);
+ALTER TABLE RECEVOIR 
+  ADD FOREIGN KEY FK_RECEVOIR_MESSAGE (ID_MESSAGE)
+      REFERENCES MESSAGE (ID_MESSAGE) ;
 
---
--- Index pour la table `appeler`
---
-ALTER TABLE `appeler`
-  ADD PRIMARY KEY (`ID_APPEL`,`ID_USER`),
-  ADD KEY `I_FK_APPELER_APPEL_VIDEO` (`ID_APPEL`),
-  ADD KEY `I_FK_APPELER_UTILISATEUR` (`ID_USER`);
 
---
--- Index pour la table `appel_video`
---
-ALTER TABLE `appel_video`
-  ADD PRIMARY KEY (`ID_APPEL`);
+ALTER TABLE RECEVOIR 
+  ADD FOREIGN KEY FK_RECEVOIR_UTILISATEUR (ID_USER)
+      REFERENCES UTILISATEUR (ID_USER) ;
 
---
--- Index pour la table `creer`
---
-ALTER TABLE `creer`
-  ADD PRIMARY KEY (`ID_USER`,`ID_REUNION`),
-  ADD KEY `I_FK_CR�ER_UTILISATEUR` (`ID_USER`),
-  ADD KEY `I_FK_CR�ER_REUNION` (`ID_REUNION`);
 
---
--- Index pour la table `envoyer`
---
-ALTER TABLE `envoyer`
-  ADD PRIMARY KEY (`ID_USER`,`ID_MESSAGE`),
-  ADD KEY `I_FK_ENVOYER_UTILISATEUR` (`ID_USER`),
-  ADD KEY `I_FK_ENVOYER_MESSAGE` (`ID_MESSAGE`);
+ALTER TABLE CREER 
+  ADD FOREIGN KEY FK_CREER_UTILISATEUR (ID_USER)
+      REFERENCES UTILISATEUR (ID_USER) ;
 
---
--- Index pour la table `etre_appele`
---
-ALTER TABLE `etre_appele`
-  ADD PRIMARY KEY (`ID_USER`,`ID_APPEL`),
-  ADD KEY `I_FK_ETRE_APPELE_UTILISATEUR` (`ID_USER`),
-  ADD KEY `I_FK_ETRE_APPELE_APPEL_VIDEO` (`ID_APPEL`);
 
---
--- Index pour la table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`ID_MESSAGE`);
+ALTER TABLE CREER 
+  ADD FOREIGN KEY FK_CREER_REUNION (ID_REUNION)
+      REFERENCES REUNION (ID_REUNION) ;
 
---
--- Index pour la table `recevoir`
---
-ALTER TABLE `recevoir`
-  ADD PRIMARY KEY (`ID_MESSAGE`,`ID_USER`),
-  ADD KEY `I_FK_RECEVOIR_MESSAGE` (`ID_MESSAGE`),
-  ADD KEY `I_FK_RECEVOIR_UTILISATEUR` (`ID_USER`);
 
---
--- Index pour la table `reunion`
---
-ALTER TABLE `reunion`
-  ADD PRIMARY KEY (`ID_REUNION`);
+ALTER TABLE ETRE_APPELE 
+  ADD FOREIGN KEY FK_ETRE_APPELE_UTILISATEUR (ID_USER)
+      REFERENCES UTILISATEUR (ID_USER) ;
 
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`ID_USER`);
 
---
--- Contraintes pour les tables déchargées
---
+ALTER TABLE ETRE_APPELE 
+  ADD FOREIGN KEY FK_ETRE_APPELE_APPEL_VIDEO (ID_APPEL)
+      REFERENCES APPEL_VIDEO (ID_APPEL) ;
 
---
--- Contraintes pour la table `appeler`
---
-ALTER TABLE `appeler`
-  ADD CONSTRAINT `FK_APPELER_APPEL_VIDEO` FOREIGN KEY (`ID_APPEL`) REFERENCES `appel_video` (`ID_APPEL`),
-  ADD CONSTRAINT `FK_APPELER_UTILISATEUR` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
---
--- Contraintes pour la table `creer`
---
-ALTER TABLE `creer`
-  ADD CONSTRAINT `FK_CR�ER_REUNION` FOREIGN KEY (`ID_REUNION`) REFERENCES `reunion` (`ID_REUNION`),
-  ADD CONSTRAINT `FK_CR�ER_UTILISATEUR` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
+ALTER TABLE ENVOYER 
+  ADD FOREIGN KEY FK_ENVOYER_UTILISATEUR (ID_USER)
+      REFERENCES UTILISATEUR (ID_USER) ;
 
---
--- Contraintes pour la table `envoyer`
---
-ALTER TABLE `envoyer`
-  ADD CONSTRAINT `FK_ENVOYER_MESSAGE` FOREIGN KEY (`ID_MESSAGE`) REFERENCES `message` (`ID_MESSAGE`),
-  ADD CONSTRAINT `FK_ENVOYER_UTILISATEUR` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
---
--- Contraintes pour la table `etre_appele`
---
-ALTER TABLE `etre_appele`
-  ADD CONSTRAINT `FK_ETRE_APPELE_APPEL_VIDEO` FOREIGN KEY (`ID_APPEL`) REFERENCES `appel_video` (`ID_APPEL`),
-  ADD CONSTRAINT `FK_ETRE_APPELE_UTILISATEUR` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
+ALTER TABLE ENVOYER 
+  ADD FOREIGN KEY FK_ENVOYER_MESSAGE (ID_MESSAGE)
+      REFERENCES MESSAGE (ID_MESSAGE) ;
 
---
--- Contraintes pour la table `recevoir`
---
-ALTER TABLE `recevoir`
-  ADD CONSTRAINT `FK_RECEVOIR_MESSAGE` FOREIGN KEY (`ID_MESSAGE`) REFERENCES `message` (`ID_MESSAGE`),
-  ADD CONSTRAINT `FK_RECEVOIR_UTILISATEUR` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
