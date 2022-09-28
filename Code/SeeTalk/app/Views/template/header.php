@@ -21,7 +21,7 @@
                 <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
                 <a href="inscription" class="nav-link">Inscription</a>
                 <a href="add_contact">Ajouter un contact</a>
-                <a href="creation">test</a>
+                <a href="mesreunions">Réu</a>
                 <a href="fiche_user">Mon compte</a>
                 <a href="group">Groupe</a>
                 <a href="login" class="nav-link">Connexion</a>
