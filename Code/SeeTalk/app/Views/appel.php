@@ -1,15 +1,26 @@
+
 <div class="container">
-    <header>
-        <h1>SeeTalk</h1>
-    </header>
-    <div>
-        <div class="cadre_appel">
-            <p>Protocole WebRTC</p>
+    <div class="cadre_appel">
+        <div class="webRTC">
+            <img src="img/cc.png"/>
         </div>
         <div class="cadre_groupe">
-            <h2>NOM DU GROUPE</h2>
+            <div class="ech_mess">
+                <h3>NOM DU GROUPE</h3><br>
+                <p class="nom_user">Lucu</p>
+                <p class="mess_user">Hey comment ça va ?</p>
+                <p class="nom_user">Nico</p>
+                <p class="mess_user">Pépouz</p>
+                <p class="nom_user">Maxou</p>
+                <p class="mess_user">Idem</p>
+                <p class="nom_user">Guigui</p>
+                <p class="mess_user">trql t'as vu !</p>                
+            </div>
             <form>
-                <input type="text" id="message" placeholder="Ecrire un message">
+                <input type="text" name="message" placeholder="Ecrire un message">
             </form>
         </div>
     </div>
+
+</div>
+</div>
