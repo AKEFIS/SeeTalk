@@ -1,5 +1,6 @@
-https://databases.000webhost.com/
+url: https://admin.alwaysdata.com/
 
-login : id19636310_seetalk_root
+mail : ndaunac@gmail.com
+password: Btssio@82300
+password bdd: Btssio82300
 
-pwd : Btssio@82300
