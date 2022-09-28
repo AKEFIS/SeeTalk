@@ -1,10 +1,4 @@
-DROP DATABASE IF EXISTS SeeTalk;
 
-CREATE DATABASE IF NOT EXISTS SeeTalk;
-USE SeeTalk;
-# -----------------------------------------------------------------------------
-#       TABLE : UTILISATEUR
-# -----------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS UTILISATEUR
  (
