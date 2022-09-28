@@ -1,0 +1,3 @@
+login : seetalk_root
+
+pwd : Btssio@82300
