@@ -21,12 +21,17 @@ body {
 }
 
 header {
-    height: min-content;
+    height: 60px;
 }
 
 header .mobile {
+    height: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+header .logo, header .logo img {
+    height: 100%;
 }
 
 header h1 {
@@ -53,8 +58,7 @@ header .menu {
     width: 100%;
     position: absolute;
     background-color: var(--main-color);
-    margin-bottom: 0;
-    transition: max-height .5s ease-out, margin-bottom .7s ease-out;
+    transition: max-height .5s ease-out;
 }
 
 header .menu.active {
@@ -70,13 +74,13 @@ header .menu a {
     font-size: 1.7em;
     text-align: center;
     border-style: transparent;
-    border-radius: 10px;
     padding: 5px;
     display: block;
     opacity: 0;
     padding-inline: 20px;
     transition: opacity .5s ease-in-out;
 }
+
 
 header .menu.active a {
     opacity: 1;
@@ -291,7 +295,7 @@ table.utilisateurs .end {
 
 @media screen and (min-width: 860px) {
 
-    header .menu {
+    /* header .menu {
         max-height: 500px;
         display: flex;
         margin-inline: 0;
@@ -305,13 +309,26 @@ table.utilisateurs .end {
         margin-block: 20px;
         font-size: 2vw;
         padding-inline: .6vw;
+    } */
+
+    header .menu {
+        width: 500px;
+        left: 100vw;
+        background-color: rgba(91, 100, 107, .85);
+        transform: translate(-100%);
+        border-bottom-left-radius: 20px;
     }
 
-    .container {
+    header .menu a {
+        text-align: right;
+        padding-right: 100px;
+    }
+
+    /* .container {
         display: grid;
         grid-template: auto 1fr 150px / 100%;
         min-height: 100vh;
-    }
+    } */
 
     .container-grid {
         grid-template: 100% / 1fr fit-content 1fr;
@@ -320,7 +337,6 @@ table.utilisateurs .end {
     .grid-accueil {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        gap: 5%;
     }
 
     .grid-accueil .img {
@@ -352,9 +368,8 @@ table.utilisateurs .end {
     }
 
     footer {
-        grid-column: 1/4;
-        grid-row: 3/3;
-        height: 100%;
+        height: 200px;
+        margin-top: 50px;
         background-color: #515a61;
     }
 

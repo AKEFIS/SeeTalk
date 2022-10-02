@@ -13,7 +13,7 @@
     <div class="container">
         <header>
             <div class="mobile">
-                <a href="" class="logo"><img src="" alt="">logo ici</a>
+                <a href="accueil" class="logo"><img src="img/txcom.png" alt=""></a>
                 <img class="menu-button" src="img/menu-icon-60.svg">
             </div>
             <div class="menu">
@@ -21,7 +21,7 @@
                 <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
                 <a href="inscription" class="nav-link">Inscription</a>
                 <a href="add_contact">Ajouter un contact</a>
-                <a href="mesreunions">Réu</a>
+                <a href="mesreunions">Réunions</a>
                 <a href="fiche_user">Mon compte</a>
                 <a href="group">Groupe</a>
                 <a href="login" class="nav-link">Connexion</a>
