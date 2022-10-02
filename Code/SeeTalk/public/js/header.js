@@ -13,6 +13,7 @@ for (let i = 1; i < 10; i += 2) {
 
 menu_button.addEventListener("click", function () {
   menu.classList.toggle("active");
+  menu_button.classList.toggle("active");
 });
 
 if (window.innerWidth >= menuToggleTreshold) {

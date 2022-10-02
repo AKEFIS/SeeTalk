@@ -39,6 +39,11 @@ header h1 {
 
 header img.menu-button {
     display: block;
+    transition: all .5s ease;
+}
+
+header img.menu-button.active {
+    transform: rotate(-90deg);
 }
 
 header .menu {
