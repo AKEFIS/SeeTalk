@@ -1,4 +1,3 @@
-
 <div class="grid-accueil">
     <div class="row">
         <div class="text">

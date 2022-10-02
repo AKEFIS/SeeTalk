@@ -2,12 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Models\Utilisateur;
+
 class Pages extends BaseController
 {
     public function accueil()
     {
+        //test du model (ca marche)
+        $users = new Utilisateur();
+        $data = [];
+        $data['users'] = $users->findAll();
+
         echo view('template/header');
-        echo view('accueil');
+        echo view('accueil', $data);
         echo view('template/footer');
     }
     public function appel()
@@ -41,25 +48,29 @@ class Pages extends BaseController
         echo view('template/footer');
     }
 
-    public function add_contact(){
+    public function add_contact()
+    {
         echo view('template/header');
         echo view('add_contact');
         echo view('template/footer');
     }
 
-    public function creation(){
+    public function creation()
+    {
         echo view('template/header');
         echo view('creation');
         echo view('template/footer');
     }
 
-    public function fiche_user(){
+    public function fiche_user()
+    {
         echo view('template/header');
         echo view('fiche_user');
         echo view('template/footer');
     }
 
-    public function group(){
+    public function group()
+    {
         echo view('template/header');
         echo view('group');
         echo view('template/footer');
