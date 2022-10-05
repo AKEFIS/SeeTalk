@@ -1,9 +1,9 @@
 :root {
     --button-color: #41424e;
-    --main-color : #5B646B;
-    --bg-element : #2C2D31;
-    --font-weight : 100;
-    --font-text : 'Nanum Gothic', sans-serif;
+    --main-color: #5B646B;
+    --bg-element: #2C2D31;
+    --font-weight: 100;
+    --font-text: 'Nanum Gothic', sans-serif;
 
 }
 
@@ -21,12 +21,18 @@ body {
 }
 
 header {
-    height: min-content;
+    height: 60px;
 }
 
 header .mobile {
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+header .logo, header .logo img {
+    height: 100%;
 }
 
 header h1 {
@@ -39,21 +45,27 @@ header h1 {
 
 header img.menu-button {
     display: block;
+    transition: all .5s ease;
+}
+
+header img.menu-button.active {
+    transform: rotate(90deg);
 }
 
 header .menu {
     max-height: 0;
     margin-inline: auto;
     overflow: hidden;
-    width: max-content;
-    margin-bottom: 0;
-    transition: max-height .5s ease-out, margin-bottom .7s ease-out;
+    width: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    transition: max-height .5s ease-out;
 }
 
 header .menu.active {
-    max-height: 500px;
-    margin-bottom: 20px;
-    transition: max-height 1s ease-in-out, margin-bottom .7s ease-in-out;
+    max-height: 800px;
+
+    transition: max-height 1s ease-in-out;
 }
 
 
@@ -63,13 +75,13 @@ header .menu a {
     font-size: 1.7em;
     text-align: center;
     border-style: transparent;
-    border-radius: 10px;
     padding: 5px;
     display: block;
     opacity: 0;
     padding-inline: 20px;
     transition: opacity .5s ease-in-out;
 }
+
 
 header .menu.active a {
     opacity: 1;
@@ -284,11 +296,11 @@ table.utilisateurs .end {
 
 @media screen and (min-width: 860px) {
 
-    header .menu {
+    /* header .menu {
         max-height: 500px;
         display: flex;
         margin-inline: 0;
-        width: auto;
+        position: relative;
         justify-content: space-evenly;
     }
 
@@ -298,13 +310,24 @@ table.utilisateurs .end {
         margin-block: 20px;
         font-size: 2vw;
         padding-inline: .6vw;
+    } */
+
+    header .menu {
+        width: 500px;
+        background-color: rgba(91, 100, 107, .85);
+        border-bottom-right-radius: 20px;
     }
 
-    .container {
+    header .menu a {
+        text-align: left;
+        padding-right: 100px;
+    }
+
+    /* .container {
         display: grid;
         grid-template: auto 1fr 150px / 100%;
         min-height: 100vh;
-    }
+    } */
 
     .container-grid {
         grid-template: 100% / 1fr fit-content 1fr;
@@ -313,7 +336,6 @@ table.utilisateurs .end {
     .grid-accueil {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        gap: 5%;
     }
 
     .grid-accueil .img {
@@ -345,9 +367,8 @@ table.utilisateurs .end {
     }
 
     footer {
-        grid-column: 1/4;
-        grid-row: 3/3;
-        height: 100%;
+        height: 200px;
+        margin-top: 50px;
         background-color: #515a61;
     }
 
@@ -356,7 +377,6 @@ table.utilisateurs .end {
     }
 
     .list-reunions {
-        max-height: 70vh;
         min-width: 800px;
         width: 75%;
         grid-column: 2/3;
@@ -389,7 +409,7 @@ table.utilisateurs .end {
     }
 }
 
-.cadre_appel{
+.cadre_appel {
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -397,18 +417,20 @@ table.utilisateurs .end {
     border-radius: 5px;
 
 }
+
 .webRTC {
     background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.webRTC img{
+
+.webRTC img {
     height: 98%;
     width: 98%;
 }
 
-.cadre_groupe{
+.cadre_groupe {
     background-color: lightgray;
     flex: 0.4;
 }
@@ -422,28 +444,29 @@ table.utilisateurs .end {
 }
 
 
-.ech_mess h3{
+.ech_mess h3 {
     text-align: center;
 }
 
-.mess_user{
+.mess_user {
     padding-left: 10px;
 }
 
 .nom_user {
-    color:red;
+    color: red;
 }
 
 @media screen and (max-width: 100px) {
     .webRTC {
         background-color: red;
     }
+
     .cadre_groupe{
-        background-color: blue;
+        background-color: pink;
+
+
+    .cadre_groupe {
+    background-color: pink;
+
     }
 }
-
-
-
-
-

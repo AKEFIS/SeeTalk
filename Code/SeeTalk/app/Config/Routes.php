@@ -37,10 +37,13 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::accueil');
 $routes->get('accueil', 'Pages::accueil');
+
+$routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs');
+
+$routes->get('inscription', 'Auth::inscription');
+$routes->get('login', 'Auth::login');
+
 $routes->get('appel', 'Pages::appel');
-$routes->get('gestion_utilisateurs', 'Pages::gestion_utilisateurs');
-$routes->get('inscription', 'Pages::inscription');
-$routes->get('login', 'Pages::login');
 $routes->get('mesreunions', 'Pages::mesreunions');
 $routes->get('add_contact', 'Pages::add_contact');
 $routes->get('fiche_user', 'Pages::fiche_user');
