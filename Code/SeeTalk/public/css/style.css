@@ -28,6 +28,7 @@ header .mobile {
     height: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
 header .logo, header .logo img {
@@ -48,7 +49,7 @@ header img.menu-button {
 }
 
 header img.menu-button.active {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
 }
 
 header .menu {
@@ -313,14 +314,12 @@ table.utilisateurs .end {
 
     header .menu {
         width: 500px;
-        left: 100vw;
         background-color: rgba(91, 100, 107, .85);
-        transform: translate(-100%);
-        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
     header .menu a {
-        text-align: right;
+        text-align: left;
         padding-right: 100px;
     }
 
