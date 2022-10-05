@@ -42,6 +42,9 @@ $routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs');
 
 $routes->get('inscription', 'Auth::inscription');
 $routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::postLogin');
+$routes->get('logout', 'Auth::logout');
+$routes->post('inscription', 'Auth::postInscription');
 
 $routes->get('appel', 'Pages::appel');
 $routes->get('mesreunions', 'Pages::mesreunions');
