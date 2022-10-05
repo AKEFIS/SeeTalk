@@ -29,8 +29,9 @@
 
             </div>
             <div class="saisie_message">
-                <form>
-                    <input type="text" name="message" placeholder="Envoyer un message">
+                <form name="message" action="">
+                    <input class="static_message" type="text" name="message" placeholder="Envoyer un message">
+                    <input class="send_message" type="submit"  name="submitmsg" value="Send" />
                 </form>
             </div>
         </div>

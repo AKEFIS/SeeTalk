@@ -438,12 +438,17 @@ table.utilisateurs .end {
 .saisie_message {
     width:100vw;
 }
-.saisie_message form input{
+.static_message{
     border: 1px solid white;
     background-color: #3b3b44;
     width:100vw;
     padding: 2px 2px 2px 3px;
     border-radius: 3px; 
+}
+.send_message {
+    border: 1px solid #3b3b44;
+    background-color: white;
+    color:  #3b3b44;
 }
 /*SI taille écran >= 921px FAIRE:*/
 @media screen and (min-width: 920px) {
