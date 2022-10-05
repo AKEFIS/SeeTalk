@@ -24,6 +24,7 @@
                 <a href="mesreunions">Réunions</a>
                 <a href="fiche_user">Mon compte</a>
                 <a href="group">Groupe</a>
+                <a href="appel">Appel</a>
                 <a href="login" class="nav-link">Connexion</a>
                 <a href="logout" class="nav-link">Déconnexion</a>
             </div>

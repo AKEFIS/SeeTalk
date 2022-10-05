@@ -423,59 +423,54 @@ table.utilisateurs .end {
     }
 }
 
-.cadre_appel {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    border-radius: 5px;
-
+.cadre_groupe {
+    background-color: #1f1f23;
+    display: inline-block;
+    width: 100vw;
 }
 
 .webRTC {
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:block;
+    float:left;
+    width:100vw;
+    height: 50vw;
 }
 
 .webRTC img {
-    height: 98%;
-    width: 98%;
-}
-
-.cadre_groupe {
-    background-color: lightgray;
-    flex: 0.4;
-}
-
-
-.ech_mess {
-    color: black;
-    height: 90%;
     width: 100%;
-    overflow-y: scroll;
+    height:100%;
 }
-
-
-.ech_mess h3 {
-    text-align: center;
+  
+.titre_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.mess_user {
-    padding-left: 10px;
+.user_message {
+    padding-left: 5px;
 }
-
-.nom_user {
-    color: red;
+.saisie_message {
+    width:100vw;
 }
-
-@media screen and (max-width: 1000px) {
-    .webRTC {
-        background-color: pink;
+.saisie_message form input{
+    border: 1px solid white;
+    background-color: #3b3b44;
+    width:100vw;
+    padding: 2px 2px 2px 3px;
+    border-radius: 3px; 
+}
+/*SI taille écran >= 921px FAIRE:*/
+@media screen and (min-width: 920px) {
+    .videocall {
+        display: flex;
     }
 
-    .cadre_groupe {
-        background-color: pink;
+    .webRTC{
+        width: 70vw;
     }
+    
 }
+
+
+
+
