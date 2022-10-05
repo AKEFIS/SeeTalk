@@ -1,24 +1,38 @@
 
 <div class="container">
-    <div class="cadre_appel">
+    <div class="videocall">
         <div class="webRTC">
             <img src="img/cc.png"/>
         </div>
         <div class="cadre_groupe">
-            <div class="ech_mess">
-                <h3>NOM DU GROUPE</h3><br>
-                <p class="nom_user">Lucu</p>
-                <p class="mess_user">Hey comment ça va ?</p>
-                <p class="nom_user">Nico</p>
-                <p class="mess_user">Pépouz</p>
-                <p class="nom_user">Maxou</p>
-                <p class="mess_user">Idem</p>
-                <p class="nom_user">Guigui</p>
-                <p class="mess_user">trql t'as vu !</p>                
+            <div class="titre_message">
+                <h4>NOM DU GROUPE</h4>
             </div>
-            <form>
-                <input type="text" name="message" placeholder="Ecrire un message">
-            </form>
+            <div class="ech_message">
+
+                <div class="chat-line_message">
+                    <p class="user_pseudo">Utilisateur.pseudo</p>
+                    <p class="user_message">14:05: Contenu de table Message</p>
+                </div>
+                <div class="chat-line_message">
+                    <p class="user_pseudo">Utilisateur.pseudo</p>
+                    <p class="user_message">14:05: Contenu de table Message</p>
+                </div>
+                <div class="chat-line_message">
+                    <p class="user_pseudo">Utilisateur.pseudo</p>
+                    <p class="user_message">14:05: Contenu de table Message</p>
+                </div>
+                <div class="chat-line_message">
+                    <p class="user_pseudo">Utilisateur.pseudo</p>
+                    <p class="user_message">14:05: Contenu de table Message</p>
+                </div>
+
+            </div>
+            <div class="saisie_message">
+                <form>
+                    <input type="text" name="message" placeholder="Envoyer un message">
+                </form>
+            </div>
         </div>
     </div>
 
