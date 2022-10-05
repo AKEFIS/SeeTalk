@@ -2,5 +2,8 @@ url: https://admin.alwaysdata.com/
 
 mail : ndaunac@gmail.com
 password: Btssio@82300
-password bdd: Btssio82300
+
+https://phpmyadmin.alwaysdata.com/
+login BDD : seetalk
+password BDD: Btssio82300
 
