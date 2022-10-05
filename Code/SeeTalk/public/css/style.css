@@ -1,7 +1,7 @@
 :root {
     --button-color: #41424e;
     --main-color: #5B646B;
-    --bg-element: #2C2D31;
+    --bg-element: #515a61;;
     --font-weight: 100;
     --font-text: 'Nanum Gothic', sans-serif;
 
@@ -97,8 +97,9 @@ header .menu a:hover {
 }
 
 footer {
-    background-color: #26272b;
-    height: 100px;
+    height: 200px;
+    margin-top: 50px;
+    background-color: var(--bg-element);
 }
 
 footer h2 {
@@ -133,7 +134,10 @@ form#connexion {
     background-color: var(--bg-element);
     height: fit-content;
     padding-bottom: 20vh;
+    margin-top: 50px;
+
 }
+
 
 form .title {
     grid-column: 2 / 3;
@@ -148,8 +152,13 @@ form .label-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+form#connexion .col-form .col{
+    width: fit-content;
     margin-inline: auto;
 }
+
 
 form label, form input {
     font-size: 1.1em;
@@ -277,10 +286,7 @@ table.utilisateurs .end {
         height: fit-content;
         border: transparent;
         border-radius: 12px;
-        grid-column: 2/3;
-        grid-row: 2/3;
         padding-bottom: 70px;
-        margin-bottom: 70px;
         max-width: 500px;
         margin-inline: auto;
     }
@@ -330,7 +336,7 @@ table.utilisateurs .end {
     } */
 
     .container-grid {
-        grid-template: 100% / 1fr fit-content 1fr;
+        min-height: 75vh;
     }
 
     .grid-accueil {
@@ -374,6 +380,14 @@ table.utilisateurs .end {
 
     form#connexion {
         max-width: 600px;
+        margin-top: 150px;
+        padding-inline: 50px;
+    }
+
+    form#connexion .col-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .list-reunions {

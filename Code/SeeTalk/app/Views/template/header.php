@@ -25,7 +25,7 @@
                 <a href="fiche_user">Mon compte</a>
                 <a href="group">Groupe</a>
                 <a href="login" class="nav-link">Connexion</a>
-                <a href="deconnexion" class="nav-link">Déconnexion</a>
+                <a href="logout" class="nav-link">Déconnexion</a>
             </div>
         </header>
         <script src="js/header.js"></script>
