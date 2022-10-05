@@ -456,12 +456,13 @@ table.utilisateurs .end {
     color: red;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
     .webRTC {
-        background-color: pink;
+        background-color: red;
     }
 
     .cadre_groupe {
-        background-color: pink;
+        background-color: blue;
+
     }
 }
