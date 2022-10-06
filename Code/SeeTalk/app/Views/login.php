@@ -1,5 +1,5 @@
 <div class="container-grid">
-    <form action="" method="post" id="connexion">
+    <form action="login" method="post" id="connexion">
         <h2 class="title">Connexion</h2>
         <div class="col-form">
             <div class="col">
@@ -13,6 +13,12 @@
                 </div>
 
             </div>
+            <?php 
+            if(!empty($_SESSION)){
+
+                var_dump($_SESSION); 
+            }
+                ?>
         </div>
         <input class="submit-button" type="submit" value="valider">
     </form>

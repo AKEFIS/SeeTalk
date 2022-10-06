@@ -10,7 +10,6 @@ class Auth extends BaseController
 
     public function login()
     {
-        session_start();
         echo view("/template/header");
         echo view("/login");
         echo view("/template/footer");
@@ -18,6 +17,7 @@ class Auth extends BaseController
 
     public function postLogin()
     {
+        $session = session();
         $login = $this->request->getVar('pseudo');
         $mdp = $this->request->getVar('mdp');
         $bd = new Utilisateur();
@@ -35,27 +35,14 @@ class Auth extends BaseController
                 'password' => $mdp,
             ])->getRowArray();
         }
-
         if ($result) {
-            session_start();
-            $_SESSION['pseudo'] = $login;
-            $_SESSION['grade'] = $result['GRADE'];
-            $_SESSION['nom'] = $result['NOM'];
-            $_SESSION['prenom'] = $result['PRENOM'];
-            $_SESSION['societe'] = $result['SOCIETE'];
-            $_SESSION['bio'] = $result['BIO'];
-            $_SESSION['email'] = $result['EMAIL'];
-            $_SESSION['telephone'] = $result['TELEPHONE'];
-            $_SESSION['img'] = $result['IMG'];
-            $_SESSION['grade'] = $result['GRADE'];
-            $_SESSION['isLoggedIn'] = true;
+            $session->set($result);
             return redirect()->to(base_url('accueil'));
         }
     }
 
     public function logout()
     {
-        session_start();
         $_SESSION = [];
         session_destroy();
         return redirect()->to(base_url('accueil'));
@@ -63,7 +50,6 @@ class Auth extends BaseController
 
     public function inscription()
     {
-        session_start();
         echo view('template/header');
         echo view('inscription');
         echo view('template/footer');
