@@ -10,6 +10,7 @@ class Auth extends BaseController
 
     public function login()
     {
+        session_start();
         echo view("/template/header");
         echo view("/login");
         echo view("/template/footer");
@@ -47,6 +48,7 @@ class Auth extends BaseController
             $_SESSION['telephone'] = $result['TELEPHONE'];
             $_SESSION['img'] = $result['IMG'];
             $_SESSION['grade'] = $result['GRADE'];
+            $_SESSION['isLoggedIn'] = true;
             return redirect()->to(base_url('accueil'));
         }
     }
@@ -61,6 +63,7 @@ class Auth extends BaseController
 
     public function inscription()
     {
+        session_start();
         echo view('template/header');
         echo view('inscription');
         echo view('template/footer');
