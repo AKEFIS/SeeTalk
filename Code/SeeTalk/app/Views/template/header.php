@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeeTalk</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/header.js"></script>
 </head>
 
 <body>
@@ -29,4 +30,3 @@
                 <a href="logout" class="nav-link">Déconnexion</a>
             </div>
         </header>
-        <script src="js/header.js"></script>

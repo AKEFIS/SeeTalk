@@ -5,7 +5,6 @@ let mobile = document.querySelector(".mobile");
 
 for (let i = 1; i < 10; i += 2) {
   if (window.location.href == nav_links[i].href) {
-    console.log(nav_links);
     nav_links[i].classList.toggle("active");
   }
 }
