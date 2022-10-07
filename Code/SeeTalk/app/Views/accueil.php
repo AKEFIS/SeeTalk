@@ -10,6 +10,11 @@
         <div class="text">
             <h2>Une envie</h2>
             Notre service de visioconférence en ligne, vous aide à mieux gérer votre entreprise.
+            <?php
+            if(!empty(session()->get())){
+                var_dump(session()->get());
+            }
+            ?>
         </div>
         <div class="img"></div>
     </div>
