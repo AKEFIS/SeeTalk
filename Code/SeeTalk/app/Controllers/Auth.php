@@ -33,18 +33,21 @@ class Auth extends BaseController
                 'email' => '',
             ])->getRowArray();
         }
-        if ($result) {
-            if(password_verify($mdp, $result['PASSWORD']))
+        if (!empty($result)) {
+            if ($mdp == $result['PASSWORD']){
                 $session->set($result);
                 $session->set(['isLoggedIn' => true]);
                 return redirect()->to(base_url('accueil'));
+            } else {
+                return redirect()->to(base_url('login'));
+            }
         }
     }
 
     public function logout()
     {
-        $_SESSION = [];
-        session_destroy();
+        $session = session();
+        $session->destroy();
         return redirect()->to(base_url('accueil'));
     }
 
