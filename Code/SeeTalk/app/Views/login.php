@@ -13,12 +13,6 @@
                 </div>
 
             </div>
-            <?php 
-            if(!empty($_SESSION)){
-
-                var_dump($_SESSION); 
-            }
-                ?>
         </div>
         <input class="submit-button" type="submit" value="valider">
     </form>

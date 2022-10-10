@@ -16,11 +16,11 @@ class Gestion extends BaseController{
         echo view("/template/footer");
     }
 
-    public function supprimerUtilisateur(){
+    public function postSupprimerUtilisateur(){
         $db = new Utilisateur();
         $query = 'delete from UTILISATEUR where ID_USER = :id:';
         $db->query($query, [
-            'id' => $this->request->getVar('id'),
+            'id' => $this->request->getVar('id_user'),
         ]);
         return redirect()->to(base_url('gestion_utilisateurs'));
     }

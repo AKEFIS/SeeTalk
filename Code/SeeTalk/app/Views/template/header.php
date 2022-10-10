@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php $session = session(); ?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +21,11 @@
             </div>
             <div class="menu">
                 <a href="accueil" class="nav-link">Accueil</a>
-                <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
+                <?php
+                if ($session->get('GRADE') == 100) {
+                ?>
+                    <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
+                <?php } ?>
                 <a href="inscription" class="nav-link">Inscription</a>
                 <a href="add_contact">Ajouter un contact</a>
                 <a href="mesreunions">Réunions</a>

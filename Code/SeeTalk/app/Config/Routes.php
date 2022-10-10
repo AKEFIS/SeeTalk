@@ -39,7 +39,7 @@ $routes->get('/', 'Pages::accueil');
 $routes->get('accueil', 'Pages::accueil');
 
 $routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => 'AuthGuard']);
-$routes->post('supprimer_utilisateur', 'Gestion::supprimer_utilisateur', ['filter' => 'AuthGuard']);
+$routes->post('supprimer_utilisateur', 'Gestion::postSupprimerUtilisateur', ['filter' => 'AuthGuard']);
 
 $routes->get('login', 'Auth::login');
 $routes->post('login', 'Auth::postLogin');
@@ -49,6 +49,7 @@ $routes->post('inscription', 'Auth::postInscription', ['filter' => 'AuthGuard'])
 
 $routes->get('appel', 'Pages::appel', ['filter' => 'AuthGuard']);
 $routes->get('mesreunions', 'Pages::mesreunions', ['filter' => 'AuthGuard']);
+
 $routes->get('add_contact', 'Pages::add_contact', ['filter' => 'AuthGuard']);
 $routes->get('fiche_user', 'Pages::fiche_user', ['filter' => 'AuthGuard']);
 $routes->get('group', 'Pages::group', ['filter' => 'AuthGuard']);

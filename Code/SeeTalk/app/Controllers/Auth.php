@@ -39,6 +39,7 @@ class Auth extends BaseController
                 $session->set(['isLoggedIn' => true]);
                 return redirect()->to(base_url('accueil'));
             } else {
+                $session->set(['isLoggedIn' => false]);
                 return redirect()->to(base_url('login'));
             }
         }
