@@ -449,7 +449,7 @@ table.utilisateurs .end {
 .user_message {
     padding-left: 5px;
 }
-.saisie_message {
+.message {
     width:100vw;
 }
 .static_message{
