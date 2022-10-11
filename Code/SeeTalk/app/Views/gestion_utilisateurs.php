@@ -18,7 +18,11 @@
                     echo '<td>' . $col . '</td>';
                 }
             ?>
-                <td><img src="img/pencil.svg" alt="" class="supprimer_user" id_user="<?= $utilisateur['ID_USER'] ?>"></td>
+                <td>
+                    <form action="modifier/<?= $utilisateur['ID_USER']?>" method="get">
+                        <input type="image" src="img/pencil.svg" alt="submit">
+                    </form>
+                </td>
                 <td>
                     <form action="supprimer_utilisateur" method="post" name="delete_user">
                         <input type="hidden" name="id_user" value="<?= $utilisateur['ID_USER'] ?>">
@@ -32,4 +36,4 @@
         </tbody>
     </table>
 </div>
-<img src="img/plus.svg" alt="" class="ajouter_user" style="max-width: 100px" id="<?= $utilisateur['ID_USER'] ?>">
+<a href="inscription"><img src="img/plus.svg" alt="" class="ajouter_user" style="max-width: 100px" id="<?= $utilisateur['ID_USER'] ?>"></a>

@@ -8,16 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeeTalk</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/header.js"></script>
+    <link rel="stylesheet" href="http://seetalk.lan/css/style.css">
+    <script defer src="http://seetalk.lan/js/header.js"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="mobile">
-                <a href="accueil" class="logo"><img src="img/txcom.png" alt=""></a>
-                <img class="menu-button" src="img/menu-icon-60.svg">
+                <a href="accueil" class="logo"><img src="http://seetalk.lan/img/txcom.png" alt=""></a>
+                <img class="menu-button" src="http://seetalk.lan/img/menu-icon-60.svg">
             </div>
             <div class="menu">
                 <a href="accueil" class="nav-link">Accueil</a>

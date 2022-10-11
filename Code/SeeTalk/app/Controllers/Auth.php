@@ -59,6 +59,18 @@ class Auth extends BaseController
         echo view('template/footer');
     }
 
+    public function modifier($id){
+        $data = [];
+        $bd = new Utilisateur();
+        $query = 'select * from UTILISATEUR where ID_USER = :id:';
+        $result = $bd->query($query, ['id' => $id])->getRowArray();
+        $data['user_data'] = $result;
+        $data['titre'] = 'modifier ' . $result['PSEUDO'];
+        echo view('template/header');
+        echo view('inscription', $data);
+        echo view('template/footer');
+    }
+
     public function postInscription()
     {
         $pseudo = $this->request->getVar('pseudo');
