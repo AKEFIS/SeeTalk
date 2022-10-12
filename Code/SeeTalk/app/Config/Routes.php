@@ -38,9 +38,6 @@ $routes->set404Override();
 $routes->get('/', 'Pages::accueil');
 $routes->get('accueil', 'Pages::accueil');
 
-<<<<<<< HEAD
-$routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => 'AuthGuard']);
-=======
 // $routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => 'AuthGuard']);
 
 $routes->group('', static function ($routes) {
@@ -48,7 +45,6 @@ $routes->group('', static function ($routes) {
     $routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => 'GestionUtilisateurGuard']);
 });
 
->>>>>>> c7ef41afe24ba4a04144ac17930a276a27b27aa4
 $routes->post('supprimer_utilisateur', 'Gestion::postSupprimerUtilisateur', ['filter' => 'AuthGuard']);
 
 $routes->get('login', 'Auth::login');
