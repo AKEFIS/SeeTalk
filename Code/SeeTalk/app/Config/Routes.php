@@ -38,7 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Pages::accueil');
 $routes->get('accueil', 'Pages::accueil');
 
-$routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => 'AuthGuard']);
+$routes->get('gestion_utilisateurs', 'Gestion::gestion_utilisateurs', ['filter' => ['AuthGuard', 'GestionUtilisateurGuard']]);
 $routes->post('supprimer_utilisateur', 'Gestion::postSupprimerUtilisateur', ['filter' => 'AuthGuard']);
 
 $routes->get('login', 'Auth::login');

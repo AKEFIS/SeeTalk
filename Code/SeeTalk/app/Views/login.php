@@ -9,7 +9,8 @@
                 </div>
                 <div class="label-input">
                     <label for="mdp">Mot de passe:</label>
-                    <input type="text" name="mdp">
+                    <input type="password" name="mdp" id="pwd">
+                    <input type="checkbox" onclick="showPassword()">Show Password
                 </div>
 
             </div>
@@ -17,3 +18,14 @@
         <input class="submit-button" type="submit" value="valider">
     </form>
 </div>
+
+<script>
+    function showPassword() {
+        var x = document.getElementById("pwd");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
