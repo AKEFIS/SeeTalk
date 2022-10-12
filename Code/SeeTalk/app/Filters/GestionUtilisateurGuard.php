@@ -11,7 +11,7 @@ class GestionUtilisateurGuard implements FilterInterface
         $session = session();
         if (!$session->get('GRADE') == 100)
         {
-            return redirect()->to(base_url('', 'refresh'));
+            return redirect()->to(base_url('/accueil', 'refresh'));
         }
     }
     
