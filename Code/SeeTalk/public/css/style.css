@@ -17,7 +17,6 @@ body {
     background-color: var(--main-color);
     color: rgb(216, 216, 216);
     min-height: 100vh;
-    min-width: fit-content;
 }
 
 header {
@@ -278,6 +277,7 @@ table.utilisateurs .end {
     background-color: var(--bg-element);
     color: rgb(216, 216, 216);
 }
+
 
 
 @media screen and (min-width: 480px) {
