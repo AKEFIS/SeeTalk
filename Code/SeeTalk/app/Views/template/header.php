@@ -16,11 +16,11 @@
     <div class="container">
         <header>
             <div class="mobile">
-                <a href="accueil" class="logo"><img src="http://seetalk.lan/img/txcom.png" alt=""></a>
+                <a href="/" class="logo"><img src="http://seetalk.lan/img/txcom.png" alt=""></a>
                 <img class="menu-button" src="http://seetalk.lan/img/menu-icon-60.svg">
             </div>
             <div class="menu">
-                <a href="accueil" class="nav-link">Accueil</a>
+                <a href="/" class="nav-link">Accueil</a>
                 <?php
                 if ($session->get('GRADE') == 100) {
                 ?>

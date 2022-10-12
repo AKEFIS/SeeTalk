@@ -49,7 +49,7 @@ class Auth extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to(base_url('/accueil'));
+        return redirect()->to(base_url('/'));
     }
 
     public function inscription()

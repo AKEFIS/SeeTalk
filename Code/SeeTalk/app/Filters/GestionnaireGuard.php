@@ -4,14 +4,14 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class GestionUtilisateurGuard implements FilterInterface
+class GestionnaireGuard implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
         $session = session();
-        if ($session->get('GRADE') != 100)
+        if ($session->get('GRADE') != 10)
         {
-            return redirect()->to(base_url('/', 'refresh'));
+            
         }
     }
     
