@@ -1,6 +1,6 @@
 <div class="container-grid">
     <form action="" method="post" id="connexion">
-        <h2 class="title"><?= $titre?></h2>
+        <h2 class="title"><?= isset($titre)? $titre : "inscription"?></h2>
         <div class="col-form">
             <div class="col">
                 <div class="label-input">
@@ -46,7 +46,7 @@
                     <label for="bio">Description:</label>
                     <textarea name="bio" style="font-size: 1.3em"><?= isset($user_data)? $user_data['BIO'] : "" ?></textarea>
                 </div>
-                <?php if($session->get('grade') == 100){ ?>
+                <?php if($session->get('GRADE') == 100){ ?>
                 <div class="label-input" id="select">
                     <label for="grade">Grade:</label>
                     <select name="grade">
@@ -57,6 +57,8 @@
                         <option value="100"<?= isset($user_data)? ($user_data['GRADE'] == 100? "selected" : "") : "" ?>>Administrateur</option>
                     </select>
                 </div>
+                <?php } else {?>
+                    <input type="hidden" name="grade" value="<?= isset($user_data)? $user_data['GRADE'] : "" ?>">
                 <?php }?>
                 <input type="hidden" name="id" value="<?= isset($id)? $id : ""?>">
             </div>

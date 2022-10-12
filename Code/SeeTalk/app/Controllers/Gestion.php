@@ -41,7 +41,6 @@ class Gestion extends BaseController{
 
     public function postModifier(){
         $bd = new Utilisateur();
-        $session = session();
         $postData = $this->request->getPost();
         $query = "update UTILISATEUR set PSEUDO = :pseudo:, NOM = :nom:, PRENOM = :prenom:, PASSWORD = :password:, SOCIETE = :societe:, EMAIL = :email:, TELEPHONE = :telephone:, GRADE = :grade: where ID_USER = :id:";
         $bd->query($query, [
@@ -52,10 +51,10 @@ class Gestion extends BaseController{
             'societe' => $postData['societe'],
             'email' => $postData['email'],
             'telephone' => $postData['telephone'],
-            'grade' => isset($postData['grade'])? $postData['grade'] : $session->get('GRADE'),
+            'grade' => $postData['grade'],
             'id' => $postData['id'],
         ]);
-        return redirect()->to(base_url('/gestion_utilisateurs'));
+        return redirect()->to(base_url('gestion_utilisateurs'));
     }
 
 

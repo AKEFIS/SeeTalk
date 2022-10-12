@@ -54,8 +54,10 @@ class Auth extends BaseController
 
     public function inscription()
     {
+        $session = session();
+        $data['session'] = $session;
         echo view('template/header');
-        echo view('inscription');
+        echo view('inscription', $data);
         echo view('template/footer');
     }
 
@@ -66,12 +68,20 @@ class Auth extends BaseController
         $pseudo = $this->request->getVar('pseudo');
         $email = $this->request->getVar('email');
         $mdp = $this->request->getVar('mdp');
-        $verify_mdp = $this->request->getVar('verify-mdp');
+        $img = $this->request->getVar('img');
+        $nom = $this->request->getVar('nom');
+        $prenom = $this->request->getVar('prenom');
+        $societe = $this->request->getVar('societe');
+        $telephone = $this->request->getVar('telephone');
+        $bio = $this->request->getVar('bio');
+        $grade = $this->request->getVar('grade');
 
         $bd = new Utilisateur();
-        $query = 'insert into UTILISATEUR (pseudo, password, email) values (:pseudo:, :password:, :email:)';
+        $query = 'insert into UTILISATEUR (pseudo, nom, prenom, password, societe, bio, email, telephone, img, grade) values (:pseudo:, :nom:, :prenom:, :password:, :societe:, :bio:, :email:, :telephone:, :img:, :grade:)';
         $bd->query($query, [
             'pseudo' => $pseudo,
+            'nom' => $nom,
+            'prenom' => $prenom,
             'password' => $mdp,
             'email' => $email,
         ]);
