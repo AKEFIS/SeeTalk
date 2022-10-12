@@ -46,7 +46,8 @@ $routes->post('login', 'Auth::postLogin');
 $routes->get('logout', 'Auth::logout');
 $routes->get('inscription', 'Auth::inscription', ['filter' => 'AuthGuard']);
 $routes->post('inscription', 'Auth::postInscription', ['filter' => 'AuthGuard']);
-$routes->get('modifier/(:any)', 'Auth::modifier/$1', ['filter' => 'AuthGuard']);
+$routes->get('modifier/(:any)', 'Gestion::modifier/$1', ['filter' => 'AuthGuard']);
+$routes->post('modifier/(:any)', 'Gestion::postModifier', ['filter' => 'AuthGuard']);
 
 $routes->get('appel', 'Pages::appel', ['filter' => 'AuthGuard']);
 $routes->get('mesreunions', 'Pages::mesreunions', ['filter' => 'AuthGuard']);

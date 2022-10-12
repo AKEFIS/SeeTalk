@@ -11,7 +11,7 @@ class AuthGuard implements FilterInterface
         $session = session();
         if (!($session->get('isLoggedIn')))
         {
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('/login'));
         }
     }
     

@@ -19,12 +19,16 @@
                     <label for="verif-mdp">Vérification Mot de passe:</label>
                     <input type="text" name="verif-mdp" value="<?= isset($user_data)? $user_data['PASSWORD'] : "" ?>">
                 </div>
+                <div class="label-input">
+                    <label for="img">Photo de profil:</label>
+                    <input type="text" name="img" value="<?= isset($user_data)? $user_data['IMG'] : "" ?>">
+                </div>
                 
             </div>
             <div class="col">
                 <div class="label-input">
                     <label for="nom">Nom:</label>
-                    <input type="text" name="pseudo" value="<?= isset($user_data)? $user_data['NOM'] : "" ?>">
+                    <input type="text" name="nom" value="<?= isset($user_data)? $user_data['NOM'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="prenom">Prenom:</label>
@@ -38,6 +42,11 @@
                     <label for="telephone">Téléphone:</label>
                     <input type="text" name="telephone" value="<?= isset($user_data)? $user_data['TELEPHONE'] : "" ?>">
                 </div>
+                <div class="label-input">
+                    <label for="bio">Description:</label>
+                    <textarea name="bio" style="font-size: 1.3em"><?= isset($user_data)? $user_data['BIO'] : "" ?></textarea>
+                </div>
+                <?php if($session->get('grade') == 100){ ?>
                 <div class="label-input" id="select">
                     <label for="grade">Grade:</label>
                     <select name="grade">
@@ -48,6 +57,8 @@
                         <option value="100"<?= isset($user_data)? ($user_data['GRADE'] == 100? "selected" : "") : "" ?>>Administrateur</option>
                     </select>
                 </div>
+                <?php }?>
+                <input type="hidden" name="id" value="<?= isset($id)? $id : ""?>">
             </div>
         </div>
         <input class="submit-button" type="submit" value="Valider">

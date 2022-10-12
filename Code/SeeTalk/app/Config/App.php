@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://seetalk.lan';
+    public $baseURL = 'http://seetalk.lan/';
 
     /**
      * --------------------------------------------------------------------------

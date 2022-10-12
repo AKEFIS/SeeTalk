@@ -26,13 +26,12 @@
                 ?>
                     <a href="gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
                 <?php } ?>
-                <a href="inscription" class="nav-link">Inscription</a>
-                <a href="add_contact">Ajouter un contact</a>
-                <a href="mesreunions">Réunions</a>
-                <a href="fiche_user">Mon compte</a>
-                <a href="group">Groupe</a>
-                <a href="appel">Appel</a>
-                <a href="login" class="nav-link">Connexion</a>
-                <a href="logout" class="nav-link">Déconnexion</a>
+                <a href="/add_contact">Ajouter un contact</a>
+                <a href="/mesreunions">Réunions</a>
+                <a href="/fiche_user">Mon compte</a>
+                <a href="/group">Groupe</a>
+                <a href="/appel">Appel</a>
+                <a href="/login" class="nav-link">Connexion</a>
+                <a href="/logout" class="nav-link">Déconnexion</a>
             </div>
         </header>

@@ -37,11 +37,11 @@ class Auth extends BaseController
             if ($mdp == $result['PASSWORD']){
                 $session->set($result);
                 $session->set(['isLoggedIn' => true]);
-                return redirect()->to(base_url('accueil'));
-            } else {
-                $session->set(['isLoggedIn' => false]);
-                return redirect()->to(base_url('login'));
+                return redirect()->to(base_url('/accueil'));
             }
+        } else {
+            $session->set(['isLoggedIn' => false]);
+            return redirect()->to(base_url('/login'));
         }
     }
 
@@ -49,7 +49,7 @@ class Auth extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to(base_url('accueil'));
+        return redirect()->to(base_url('/accueil'));
     }
 
     public function inscription()
@@ -59,17 +59,7 @@ class Auth extends BaseController
         echo view('template/footer');
     }
 
-    public function modifier($id){
-        $data = [];
-        $bd = new Utilisateur();
-        $query = 'select * from UTILISATEUR where ID_USER = :id:';
-        $result = $bd->query($query, ['id' => $id])->getRowArray();
-        $data['user_data'] = $result;
-        $data['titre'] = 'modifier ' . $result['PSEUDO'];
-        echo view('template/header');
-        echo view('inscription', $data);
-        echo view('template/footer');
-    }
+
 
     public function postInscription()
     {
@@ -85,6 +75,6 @@ class Auth extends BaseController
             'password' => $mdp,
             'email' => $email,
         ]);
-        return redirect()->to(base_url('accueil'));
+        return redirect()->to(base_url('/accueil'));
     }
 }

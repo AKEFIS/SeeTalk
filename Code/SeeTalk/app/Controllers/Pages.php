@@ -54,8 +54,18 @@ class Pages extends BaseController
 
     public function fiche_user()
     {
+        $session = session();
+        $bd = new Utilisateur();
+        $query = 'select * from UTILISATEUR where ID_USER = :id:';
+        $result = $bd->query($query, [
+            'id' => $session->get('ID_USER'),
+        ])->getRowArray();
+
+        $data['user_data'] = $result;
+        $data['session'] = $session;
+
         echo view('template/header');
-        echo view('fiche_user');
+        echo view('fiche_user', $data);
         echo view('template/footer');
     }
 
