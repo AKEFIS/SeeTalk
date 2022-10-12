@@ -9,9 +9,9 @@ class GestionUtilisateurGuard implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $session = session();
-        if (!$session->get('GRADE') == 100)
+        if ($session->get('GRADE') != 100)
         {
-            return redirect()->to(base_url('/accueil', 'refresh'));
+            return redirect()->to(base_url('/', 'refresh'));
         }
     }
     
