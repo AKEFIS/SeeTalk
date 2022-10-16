@@ -28,7 +28,7 @@
                 <p class="title-font"><?= isset($user_data['BIO'])? $user_data['BIO'] : "Bonjour je m'apelle Pedro, Pedro le rigolo. Ici pour vous faire rigoler. Pourquoi est-ce difficile de quitter une copine japonaise ? car il faut larguer 2 bombes avant qu'elle comprenne." ?></p>
             </div>
             <div class="img-add" style="width: fit-content">
-                <h3 class="title-font" onclick="location.href='<?= base_url('/modifier/' . $session->get('ID_USER'))?>'">modifier les informations</h3>
+                <h3 class="title-font" onclick="location.href='<?= base_url('/modifier/single/'. $session->get('ID_USER'))?>'">modifier les informations</h3>
             </div>
         </div>
     </div>

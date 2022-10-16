@@ -1,5 +1,5 @@
 <div class="container-grid">
-    <form action="" method="post" id="connexion">
+    <form action="<?php if(isset($single)){ echo("/modifier/single/" . $session->get('ID_USER'));}?>" method="post" id="connexion">
         <h2 class="title"><?= isset($titre)? $titre : "inscription"?></h2>
         <div class="col-form">
             <div class="col">

@@ -47,6 +47,9 @@ $routes->post('login', 'Auth::postLogin');
 $routes->get('logout', 'Auth::logout');
 $routes->get('inscription', 'Auth::inscription', ['filter' => 'AuthGuard']);
 $routes->post('inscription', 'Auth::postInscription', ['filter' => 'AuthGuard']);
+
+$routes->get('modifier/single/(:any)', 'Gestion::modifierSingle/$1', ['filter' => 'AuthGuard']);
+$routes->post('modifier/single/(:any)', 'Gestion::postModifierSingle', ['filter' => 'AuthGuard']);
 $routes->get('modifier/(:any)', 'Gestion::modifier/$1', ['filter' => 'AuthGuard']);
 $routes->post('modifier/(:any)', 'Gestion::postModifier', ['filter' => 'AuthGuard']);
 

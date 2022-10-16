@@ -57,5 +57,40 @@ class Gestion extends BaseController{
         return redirect()->to(base_url('gestion_utilisateurs'));
     }
 
+    public function modifierSingle($id){
+        $session = session();
+        $bd = new Utilisateur();
+        $query = 'select * from UTILISATEUR where ID_USER = :id:';
+        $result = $bd->query($query, ['id' => $id])->getRowArray();
+        $data['user_data'] = $result;
+        $data['id'] = $id;
+        $data['titre'] = 'modifier ' . $result['PSEUDO'];
+        $data['session'] = $session;
+        $data['single'] = true;
+        echo view('template/header');
+        echo view('inscription', $data);
+        echo view('template/footer');
+    }
+
+    public function postModifierSingle(){
+        $bd = new Utilisateur();
+        $postData = $this->request->getPost();
+        var_dump($postData);
+        $query = "update UTILISATEUR set PSEUDO = :pseudo:, NOM = :nom:, PRENOM = :prenom:, PASSWORD = :password:, SOCIETE = :societe:, EMAIL = :email:, BIO = :bio:, TELEPHONE = :telephone: where ID_USER = :id:";
+        $bd->query($query, [
+            'pseudo' => $postData['pseudo'],
+            'nom' => $postData['nom'],
+            'prenom' => $postData['prenom'],
+            'password' => $postData['mdp'],
+            'societe' => $postData['societe'],
+            'email' => $postData['email'],
+            'bio' => $postData['bio'],
+            'telephone' => $postData['telephone'],
+            'id' => $postData['id'],
+        ]);
+        return redirect()->to(base_url('/fiche_user'));
+    }
+
+
 
 }
