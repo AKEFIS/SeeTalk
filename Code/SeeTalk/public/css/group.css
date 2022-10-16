@@ -12,6 +12,8 @@ body{
 } */
 :root {
     --button-color: #41424e;
+    font-family: var(--font-text);
+    font-weight: var(--font-weight);
 }
 
 .title-font {
@@ -52,7 +54,9 @@ header h3{
 #container .reunion {
     background-color: var(--bg-element);
     height: auto;
-    border-radius: 80px 0 80px 0;;
+    border-radius: 80px 0 80px 0;
+    width: 85%;
+    padding-bottom: 40px;
 }
 
 .reunion h2 {
@@ -82,10 +86,12 @@ input {
 }
 
 .ajouter {
+    color: var(--bg-element);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
+    padding-bottom: 20px;
 }
 
 .people-list {
@@ -94,14 +100,23 @@ input {
     color: white;
 }
 
-.people-list p {
-    margin-top: 1rem;
-    width: 75%;
-}
 
 .add_member {
     background-color: white;
     overflow-y: scroll;
+    max-height: 40vh;
+    width: 75%;
+}
+
+.add_member .member {
+    background-color: var(--button-color);
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: var(--bg-element) 1px solid;
+    display: flex;
+    align-items: center;
+    padding-inline: 25%;
 }
 
 .add_member h3 {
@@ -170,7 +185,8 @@ input {
 
     #container .reunion {
         background-color: var(--bg-element);
-        width: 80%
+        width: 65%;
+        max-width: 1200px;
     }
 
     #container .reunion form {

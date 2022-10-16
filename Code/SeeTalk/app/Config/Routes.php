@@ -53,13 +53,18 @@ $routes->post('modifier/single/(:any)', 'Gestion::postModifierSingle', ['filter'
 $routes->get('modifier/(:any)', 'Gestion::modifier/$1', ['filter' => 'AuthGuard']);
 $routes->post('modifier/(:any)', 'Gestion::postModifier', ['filter' => 'AuthGuard']);
 
-$routes->get('appel', 'Pages::appel', ['filter' => 'AuthGuard']);
-$routes->get('mesreunions', 'Pages::mesreunions', ['filter' => 'AuthGuard']);
+$routes->get('appel', 'Reunion::appel', ['filter' => 'AuthGuard']);
 
 $routes->get('add_contact', 'Pages::add_contact', ['filter' => 'AuthGuard']);
 $routes->get('fiche_user', 'Pages::fiche_user', ['filter' => 'AuthGuard']);
-$routes->get('group', 'Pages::group', ['filter' => 'AuthGuard']);
 $routes->get('creation', 'Pages::creation', ['filter' => 'AuthGuard']);
+
+$routes->get('mesreunions', 'Reunion::mesreunions', ['filter' => 'AuthGuard']);
+$routes->get('creer_reunion', 'Reunion::creer_reunion', ['filter' => 'AuthGuard']);
+$routes->post('creer_reunion', 'Reunion::postCreer_reunion', ['filter' => 'AuthGuard']);
+
+
+
 
 /*
  * --------------------------------------------------------------------

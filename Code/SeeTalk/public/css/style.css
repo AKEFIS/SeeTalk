@@ -1,9 +1,11 @@
 :root {
     --button-color: #41424e;
     --main-color: #5B646B;
-    --bg-element: #515a61;;
+    --bg-element: #515a61;
+    ;
     --font-weight: 100;
     --font-text: 'Nanum Gothic', sans-serif;
+
 
 }
 
@@ -11,16 +13,24 @@
 body {
     margin: 0;
     overflow-x: hidden;
+    font-family: var(--font-text);
+    font-weight: var(--font-weight);
 }
 
 .container {
     background-color: var(--main-color);
     color: rgb(216, 216, 216);
+    padding-top: 100px;
     min-height: 100vh;
+    overflow: hidden;
+    padding-bottom: 50px;
 }
 
 header {
     height: 60px;
+    position: fixed;
+    width: 100vw;
+    background-color: rgba(91, 100, 107, .85);
 }
 
 header .mobile {
@@ -97,7 +107,6 @@ header .menu a:hover {
 
 footer {
     height: 200px;
-    margin-top: 50px;
     background-color: var(--bg-element);
 }
 
@@ -137,6 +146,10 @@ form#connexion {
 
 }
 
+form#connexion.inscription {
+    margin-bottom: 100px;
+}
+
 
 form .title {
     grid-column: 2 / 3;
@@ -151,9 +164,15 @@ form .label-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 250px;
 }
 
-form#connexion .col-form .col{
+textarea {
+    max-width: 250px;
+    min-width: 250px;
+}
+
+form#connexion .col-form .col {
     width: fit-content;
     margin-inline: auto;
 }
@@ -167,11 +186,10 @@ form label {
     padding-bottom: 5px;
 }
 
-form input[type="text"] {
-    max-width: 260px;
-    height: 27px;
-    width: 90vw;
-    margin-bottom: 16px;
+input {
+    margin-top: .5rem;
+    font-size: x-large;
+    padding: .5rem;
 }
 
 form .submit-button {
@@ -278,14 +296,22 @@ table.utilisateurs .end {
     color: rgb(216, 216, 216);
 }
 
-
+.plus {
+    color: var(--button-color);
+    background-color: white;
+    border-radius: 50%;
+    height: fit-content;
+    width: 17px;
+    text-align: center;
+    margin-left: auto;
+}
 
 @media screen and (min-width: 480px) {
 
     form#connexion {
         height: fit-content;
         border: transparent;
-        border-radius: 12px;
+        border-radius: 80px 0 80px 0;
         padding-bottom: 70px;
         max-width: 500px;
         margin-inline: auto;
@@ -335,9 +361,6 @@ table.utilisateurs .end {
         min-height: 100vh;
     } */
 
-    .container-grid {
-        min-height: 75vh;
-    }
 
     .grid-accueil {
         display: grid;
@@ -372,15 +395,10 @@ table.utilisateurs .end {
         padding-bottom: 25px;
     }
 
-    footer {
-        height: 200px;
-        margin-top: 50px;
-        background-color: #515a61;
-    }
 
     form#connexion {
         max-width: 600px;
-        margin-top: 150px;
+        margin-top: 80px;
         padding-inline: 50px;
     }
 
@@ -430,52 +448,53 @@ table.utilisateurs .end {
 }
 
 .webRTC {
-    display:block;
-    float:left;
-    width:100vw;
+    display: block;
+    float: left;
+    width: 100vw;
     height: 50vw;
 }
 
 .webRTC img {
     width: 100%;
-    height:100%;
+    height: 100%;
 }
-  
+
 .titre_message {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .user_message {
     padding-left: 5px;
 }
+
 .message {
-    width:100vw;
+    width: 100vw;
 }
-.static_message{
+
+.static_message {
     border: 1px solid white;
     background-color: #3b3b44;
-    width:100vw;
+    width: 100vw;
     padding: 2px 2px 2px 3px;
-    border-radius: 3px; 
+    border-radius: 3px;
 }
+
 .send_message {
     border: 1px solid #3b3b44;
     background-color: white;
-    color:  #3b3b44;
+    color: #3b3b44;
 }
+
 /*SI taille écran >= 921px FAIRE:*/
 @media screen and (min-width: 920px) {
     .videocall {
         display: flex;
     }
 
-    .webRTC{
+    .webRTC {
         width: 70vw;
     }
-    
+
 }
-
-
-
-

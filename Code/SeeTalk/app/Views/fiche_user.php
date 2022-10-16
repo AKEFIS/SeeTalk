@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="css/user.css">
 
-<div class="container">
     <div id="container">
         <div class="img-add">
             <div style="overflow: hidden" class="circle"><img style="max-width: 100%; min-height: 100%;" src="<?= isset($user_data['IMG'])? $user_data['IMG'] : "img/cc.png" ?>" alt=""></div>
@@ -32,7 +31,6 @@
             </div>
         </div>
     </div>
-</div>
 
     <script src="./javascript/index.js" type="text/javascript"></script>
 
