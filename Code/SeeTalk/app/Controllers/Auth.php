@@ -89,7 +89,7 @@ class Auth extends BaseController
     public function validation()
     {
         $bd = new Utilisateur();
-        $data['users0'] = $bd->query("SELECT id_user, pseudo, nom, prenom, email, telephone FROM UTILISATEUR WHERE VALIDATION = 5")->getResultArray();
-        echo view("validation", $data);
+        $data['validation'] = $bd->query("SELECT VALIDATION FROM UTILISATEUR")->getResultArray();
+        Gestion::gestion_utilisateurs();
     }
 }
