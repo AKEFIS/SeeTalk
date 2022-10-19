@@ -27,6 +27,7 @@ header {
   position: fixed;
   width: 100vw;
   background-color: rgba(91, 100, 107, 0.85);
+  overflow: auto; /* Scroll bar fix */
 }
 
 header .mobile {
