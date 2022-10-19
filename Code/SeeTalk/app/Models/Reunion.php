@@ -14,5 +14,5 @@ class Reunion extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_reunion', 'nom', 'description', 'date_reunion'];
+    protected $allowedFields = ['id_reunion', 'nom', 'description', 'password', 'date_reunion'];
 }

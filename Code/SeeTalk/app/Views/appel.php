@@ -57,21 +57,24 @@ if (!isset($_SESSION['name'])) {
 
 
     if (isset($_POST['enter'])) {
-        if ($_POST['name'] != "") {
+        if ($_POST['pass'] != "getpassréunion") {
             $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+            //$_GET['id_user']; where iduser = id_user de connection
         } else {
-            echo '<span class="error">Please type in a name</span>';
+            echo '<span class="error">Il vous faut saisir un mot de passe</span>';
         }
+        
     }
 
     function loginForm()
-    {
+    {//Identifier la personne connecté
+     //Le connecter à la réunion avec le mot de passe X
         echo '
-    <div id="loginform">
-      <p>Please enter your name to continue!</p>
-      <form action="index.php" method="post">
-        <label for="name">Name &mdash;</label>
-        <input type="text" name="name" id="name" />
+    <div id="identificationchat">
+      <p>Saisir le mot de passe de la réunion:</p>
+      <form action="identification" method="post">
+        <label for="name">Mot de Passe:</label>
+        <input type="text" name="pass" id="pass" />
         <input type="submit" name="enter" id="enter" value="Enter" />
       </form>
     </div>
