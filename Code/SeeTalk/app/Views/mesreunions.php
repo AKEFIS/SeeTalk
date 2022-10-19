@@ -1,5 +1,3 @@
-
-
 <div class="container-grid">
     <div class="list-reunions">
         <div class="inner">

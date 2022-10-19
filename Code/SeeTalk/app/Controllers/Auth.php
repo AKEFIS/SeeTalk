@@ -21,7 +21,7 @@ class Auth extends BaseController
         $login = $this->request->getVar('pseudo');
         $mdp = $this->request->getVar('mdp');
         $bd = new Utilisateur();
-        $query = 'select * from UTILISATEUR where pseudo = :pseudo: or email = :email: and validation = 1;';
+        $query = 'select * from UTILISATEUR where (pseudo = :pseudo: or email = :email:) and validation = 1;';
         if (preg_match('^@^', $login)) {
             $result = $bd->query($query, [
                 'pseudo' => '',
@@ -61,8 +61,6 @@ class Auth extends BaseController
         echo view('template/footer');
     }
 
-
-
     public function postInscription()
     {
         $pseudo = $this->request->getVar('pseudo');
@@ -86,5 +84,12 @@ class Auth extends BaseController
             'email' => $email,
         ]);
         return redirect()->to(base_url('/accueil'));
+    }
+
+    public function validation()
+    {
+        $bd = new Utilisateur();
+        $data['users0'] = $bd->query("SELECT id_user, pseudo, nom, prenom, email, telephone FROM UTILISATEUR WHERE VALIDATION = 5")->getResultArray();
+        echo view("validation", $data);
     }
 }
