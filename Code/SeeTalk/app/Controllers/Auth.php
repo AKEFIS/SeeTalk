@@ -21,7 +21,7 @@ class Auth extends BaseController
         $login = $this->request->getVar('pseudo');
         $mdp = $this->request->getVar('mdp');
         $bd = new Utilisateur();
-        $query = 'select * from UTILISATEUR where pseudo = :pseudo: or email = :email:;';
+        $query = 'select * from UTILISATEUR where pseudo = :pseudo: or email = :email: and validation = 1;';
         if (preg_match('^@^', $login)) {
             $result = $bd->query($query, [
                 'pseudo' => '',
@@ -34,7 +34,7 @@ class Auth extends BaseController
             ])->getRowArray();
         }
         if (!empty($result)) {
-            if ($mdp == $result['PASSWORD']){
+            if ($mdp == $result['PASSWORD']) {
                 $session->set($result);
                 $session->set(['isLoggedIn' => true]);
                 return redirect()->to(base_url('/accueil'));
