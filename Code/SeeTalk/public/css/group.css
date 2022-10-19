@@ -116,7 +116,7 @@ input {
     border-bottom: var(--bg-element) 1px solid;
     display: flex;
     align-items: center;
-    padding-inline: 25%;
+    padding-inline: 2em;
 }
 
 .add_member h3 {

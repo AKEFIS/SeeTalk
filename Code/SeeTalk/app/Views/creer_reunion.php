@@ -16,6 +16,10 @@
                         <input type="password" name="group_password">
                     </div>
                     <div class="input_group" style="margin-top: 1rem;">
+                        <label for="description" class="title-font">OBJET : </label>
+                        <textarea style="max-width: 1000px; min-width: 0px; width: 75%; resize: none; padding: 8px; font-size: 1.3em" name="description"></textarea>
+                    </div>
+                    <div class="input_group" style="margin-top: 1rem;">
                         <label for="group_date" class="title-font">DATE : </label>
                         <input type="date" name="group_date">
                     </div>

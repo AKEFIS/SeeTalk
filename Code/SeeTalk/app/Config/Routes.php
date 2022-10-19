@@ -61,6 +61,7 @@ $routes->get('fiche_user', 'Pages::fiche_user', ['filter' => 'AuthGuard']);
 $routes->get('creation', 'Pages::creation', ['filter' => 'AuthGuard']);
 
 $routes->get('mesreunions', 'Reunion::mesreunions', ['filter' => 'AuthGuard']);
+$routes->post('mesreunions', 'Reunion::postMesreunions', ['filter' => 'AuthGuard']);
 $routes->get('creer_reunion', 'Reunion::creer_reunion', ['filter' => 'AuthGuard']);
 $routes->post('creer_reunion', 'Reunion::postCreer_reunion', ['filter' => 'AuthGuard']);
 

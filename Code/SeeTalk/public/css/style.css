@@ -201,6 +201,26 @@ form .submit-button:hover {
   box-shadow: rgb(22, 22, 22) 2px 2px 2px;
 }
 
+form .submit-button-reunion {
+  padding-inline: 53px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: fit-content;
+  margin-inline: auto;
+  background-color: rgba(91, 100, 107, 0.85);
+  color: rgb(216, 216, 216);
+  border: transparent;
+  border-radius: 12px;
+}
+
+form .submit-button-reunion.active {
+  border: rgb(0, 143, 0) solid 2px;
+}
+
+form .submit-button-reunion:hover {
+  box-shadow: rgb(22, 22, 22) 2px 2px 2px;
+}
+
 .list-reunions {
   background-color: var(--bg-element);
   color: #26272b;
@@ -242,7 +262,7 @@ form .submit-button:hover {
 
 .reunion .row {
   display: flex;
-  margin: 10px;
+  margin: 8px;
 }
 
 .reunion h3 {
