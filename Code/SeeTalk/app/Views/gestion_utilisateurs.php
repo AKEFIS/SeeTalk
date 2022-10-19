@@ -12,14 +12,37 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($utilisateurs as $utilisateur) {
+            <?php
+            foreach ($utilisateurs as $utilisateur) {
                 echo '<tr>';
+                $i = 0;
                 foreach ($utilisateur as $col) {
-                    echo '<td>' . $col . '</td>';
-                }
+                    $i++;
+                    if ($i != 12) {
+                        echo '<td>' . $col . '</td>';
+                    } else {
+                        if ($col == 1) {
             ?>
+                            <td>
+                                <form action="validate/<?= $utilisateur['ID_USER'] ?>" method="post">
+                                    <input type="image" src="img/valid.svg">
+                                </form>
+                            </td>
+                        <?php
+                        } else if ($col == 0) {
+                        ?>
+                            <td>
+                                <form action="validate/<?= $utilisateur['ID_USER'] ?>" method="post">
+                                    <input type="image" src="img/red_cross.svg">
+                                </form>
+                            </td>
+                <?php
+                        }
+                    }
+                }
+                ?>
                 <td>
-                    <form action="modifier/<?= $utilisateur['ID_USER']?>" method="get">
+                    <form action="modifier/<?= $utilisateur['ID_USER'] ?>" method="get">
                         <input type="image" src="img/pencil.svg" alt="submit">
                     </form>
                 </td>
