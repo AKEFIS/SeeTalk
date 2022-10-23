@@ -15,22 +15,27 @@
                             </div>
                             <?php foreach ($reunion['participants'] as $participant) { ?>
                                 <div class="row">
-                                    <div class="participants"><?php echo ('- ' . $participant['NOM'] . " " . $participant['PRENOM']); ?></div>
+                                    <div class="participants">
+                                        <?php echo ('- ' . $participant['NOM'] . " " . $participant['PRENOM'] . ", ");
+                                        try {
+                                            echo(in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'present' : 'absent');
+                                        } catch (Exception $e) {
+                                            echo ('absent');
+                                        } ?></div>
                                 </div>
                             <?php } ?>
                             <div class="row">
-                                <form action="" method="post">
-                                    <input type="hidden" name="id_user" value="<?php $participant['ID_USER'];?>">
-                                    <input type="hidden" name="id_reunion" value="<?php $reunion['ID_REUNION'];?>">
-                                    <input class="submit-button-reunion" type="submit" name="presence" value="present">
-                                    <input class="submit-button-reunion" type="submit" name="presence" value="absent">
+                                <form action="" method="post" id="reunions">
+                                    <input type="hidden" name="id_user" value="<?php echo (session('ID_USER')); ?>">
+                                    <input type="hidden" name="id_reunion" value="<?php echo ($reunion['ID_REUNION']); ?>">
+                                    <input class="submit-button-reunion" type="submit" name="presence" value="<?= in_array($reunion['ID_REUNION'], $present[session()->get('ID_USER')]) ? 'present' : 'absent' ?>">
                                 </form>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php }?>
                 </div>
             </div>
         </div>
-        <div class="creer-reunion">Créer une réunion</div>
+        <!-- <div class="creer-reunion">Créer une réunion</div> -->
     </div>
 </div>

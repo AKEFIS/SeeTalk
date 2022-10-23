@@ -18,20 +18,23 @@
             <a href="/" class="logo"><img src="http://seetalk.lan/img/txcom.png" alt=""></a>
             <img class="menu-button" src="http://seetalk.lan/img/menu-icon-60.svg">
         </div>
-            <div class="menu">
-                <a href="/" class="nav-link">Accueil</a>
-                <?php
-                if ($session->get('GRADE') == 100) {
-                    ?>
-                    <a href="/gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
-                    <?php } ?>
-                    <a href="/add_contact">Ajouter un contact</a>
-                    <a href="/mesreunions">Réunions</a>
-                    <a href="/fiche_user">Mon compte</a>
-                    <a href="/creer_reunion">Créer une réunion</a>
-                    <a href="/appel">Appel</a>
-                    <a href="/login" class="nav-link">Connexion</a>
-                    <a href="/logout" class="nav-link">Déconnexion</a>
-                </div>
-            </header>
+        <div class="menu">
+            <a href="/" class="nav-link">Accueil</a>
+            <?php
+            if ($session->get('GRADE') == 100) {
+            ?>
+                <a href="/gestion_utilisateurs" class="nav-link">Gestion utilisateurs</a>
+            <?php } ?>
+            <!-- <a href="/add_contact">Ajouter un contact</a> -->
+            <a href="/mesreunions">Réunions</a>
+            <a href="/fiche_user">Mon compte</a>
+            <a href="/creer_reunion">Créer une réunion</a>
+            <a href="/appel">Appel</a>
+            <?php if (!$session->get('ID_USER')) { ?>
+                <a href="/login" class="nav-link">Connexion</a>
+            <?php } else { ?>
+                <a href="/logout" class="nav-link">Déconnexion</a>
+            <?php } ?>
+        </div>
+    </header>
     <div class="container">

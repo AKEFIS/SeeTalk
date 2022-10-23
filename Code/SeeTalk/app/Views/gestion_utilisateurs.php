@@ -21,23 +21,18 @@
                     if ($i != 12) {
                         echo '<td>' . $col . '</td>';
                     } else {
-                        if ($col == 1) {
             ?>
-                            <td>
-                                <form action="validate/<?= $utilisateur['ID_USER'] ?>" method="post">
+                        <td>
+                            <form action="validation/<?= $utilisateur['ID_USER'] ?>" method="post">
+                                <?php if ($col == 1) { ?>
                                     <input type="image" src="img/valid.svg">
-                                </form>
-                            </td>
-                        <?php
-                        } else if ($col == 0) {
-                        ?>
-                            <td>
-                                <form action="validate/<?= $utilisateur['ID_USER'] ?>" method="post">
+                                <?php } else if ($col == 0) { ?>
                                     <input type="image" src="img/red_cross.svg">
-                                </form>
-                            </td>
+                                <?php } ?>
+                            </form>
+                        </td>
                 <?php
-                        }
+
                     }
                 }
                 ?>

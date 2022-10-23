@@ -81,15 +81,33 @@ class Auth extends BaseController
             'nom' => $nom,
             'prenom' => $prenom,
             'password' => $mdp,
+            'societe' => $societe,
+            'bio' => $bio,
             'email' => $email,
+            'telephone' => $telephone,
+            'img' => $img,
+            'grade' => $grade,
         ]);
         return redirect()->to(base_url('/accueil'));
     }
 
-    public function validation()
-    {
-        $bd = new Utilisateur();
-        $data['validation'] = $bd->query("SELECT VALIDATION FROM UTILISATEUR")->getResultArray();
-        Gestion::gestion_utilisateurs();
+    public function postValidation($id) {
+        $db = new Utilisateur();
+        $query = 'SELECT * FROM UTILISATEUR WHERE ID_USER = :id:;';
+        $user = $db->query($query, ['id' => $id])->getRowArray();
+        $status = $user['VALIDATION'];
+        $query = 'UPDATE UTILISATEUR SET VALIDATION = :status: WHERE ID_USER = :id:;';
+        if($status == 0){
+            $db->query($query, [
+                'status' => 1,
+                'id' => $id,
+            ]);
+        } else {
+            $db->query($query, [
+                'status' => 0,
+                'id' => $id,
+            ]);
+        }
+        return redirect()->to(base_url('/gestion_utilisateurs'));
     }
 }
