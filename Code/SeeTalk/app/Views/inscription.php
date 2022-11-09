@@ -59,7 +59,7 @@
                         </select>
                     </div>
                 <?php } else { ?>
-                    <input type="hidden" name="grade" value="<?= isset($user_data) ? $user_data['GRADE'] : "" ?>">
+                    <input style="display:none" type="hidden" name="grade" value="<?= isset($user_data) ? $user_data['GRADE'] : "" ?>">
                 <?php } ?>
                 <input type="hidden" name="id" value="<?= isset($id) ? $id : "" ?>">
             </div>
