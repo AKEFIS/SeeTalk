@@ -343,6 +343,10 @@ table.utilisateurs .end {
 
 }
 
+div.reunion h3{
+  text-transform: uppercase;
+}
+
 @media screen and (min-width: 480px) {
   form#connexion {
     height: fit-content;

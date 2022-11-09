@@ -11,7 +11,7 @@
                                 <div class="horaire"><?php echo ("Le " . substr($reunion['DATE_REUNION'], 0, 10) . " à " . substr($reunion['DATE_REUNION'], 10)); ?></div>
                             </div>
                             <div class="row">
-                                <div class="objet"><?php echo ($reunion['DESCRIPTION']); ?></div>
+                                <div class="objet"><u>Objet:</u> <?php echo ($reunion['DESCRIPTION']); ?></div>
                             </div>
                             <?php foreach ($reunion['participants'] as $participant) { ?>
                                 <div class="row">
