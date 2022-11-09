@@ -45,8 +45,8 @@ $routes->post('supprimer_utilisateur', 'Gestion::postSupprimerUtilisateur', ['fi
 $routes->get('login', 'Auth::login');
 $routes->post('login', 'Auth::postLogin');
 $routes->get('logout', 'Auth::logout');
-$routes->get('inscription', 'Auth::inscription', ['filter' => 'AuthGuard']);
-$routes->post('inscription', 'Auth::postInscription', ['filter' => 'AuthGuard']);
+$routes->get('inscription', 'Auth::inscription');
+$routes->post('inscription', 'Auth::postInscription');
 
 $routes->post('validation/(:any)', 'Auth::postValidation/$1', ['filter' => 'AuthGuard']);
 

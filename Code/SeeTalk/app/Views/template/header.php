@@ -30,6 +30,17 @@
             <a href="/fiche_user">Mon compte</a>
             <a href="/creer_reunion">Créer une réunion</a>
             <a href="/appel">Appel</a>
+            <?php
+            if ($session->get('GRADE') == 100) {
+            ?>
+                <a href="/inscription">Créer un compte</a>
+            <?php
+            } else {
+            ?>
+                <a href="/inscription">Inscription</a>
+            <?php
+            }
+            ?>
             <?php if (!$session->get('ID_USER')) { ?>
                 <a href="/login" class="nav-link">Connexion</a>
             <?php } else { ?>
