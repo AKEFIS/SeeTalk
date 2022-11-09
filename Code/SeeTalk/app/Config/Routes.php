@@ -66,6 +66,9 @@ $routes->post('mesreunions', 'Reunion::postMesreunions', ['filter' => 'AuthGuard
 $routes->get('creer_reunion', 'Reunion::creer_reunion', ['filter' => 'AuthGuard']);
 $routes->post('creer_reunion', 'Reunion::postCreer_reunion', ['filter' => 'AuthGuard']);
 
+$routes->get('mentions_legales', 'Pages::mentions_legales');
+$routes->get('contact', 'Pages::contact');
+
 
 
 

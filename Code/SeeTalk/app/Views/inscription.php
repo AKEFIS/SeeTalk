@@ -7,10 +7,11 @@
                 <div class="label-input">
                     <label for="pseudo">Pseudo:</label>
                     <input type="text" name="pseudo" value="<?= isset($user_data) ? $user_data['PSEUDO'] : "" ?>">
+                    <?php if(isset($_COOKIE["erreur"])){echo "<span style='color:red'>".$_COOKIE["erreur"]."</span>";} ?>
                 </div>
                 <div class="label-input">
                     <label for="email">E-Mail:</label>
-                    <input type="mail" name="email" value="<?= isset($user_data) ? $user_data['EMAIL'] : "" ?>">
+                    <input type="mail" name="email"  value="<?= isset($user_data) ? $user_data['EMAIL'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="mdp">Mot de passe:</label>

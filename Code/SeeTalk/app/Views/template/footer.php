@@ -3,7 +3,7 @@
     <div class="footer_container">
         <div class="footer_center">
             <a href="/mentions_legales">Mentions légales</a> <br><br>
-            <a href="/contactez_nous">Contactez-nous</a>
+            <a href="/contact">Contactez-nous</a>
         </div>
     </div>
 </footer>
