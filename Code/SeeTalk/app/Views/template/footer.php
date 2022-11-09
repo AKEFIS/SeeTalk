@@ -6,7 +6,6 @@
             <a href="/contactez_nous">Contactez-nous</a>
         </div>
     </div>
-
 </footer>
 
 
