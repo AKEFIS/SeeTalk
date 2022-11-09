@@ -72,8 +72,9 @@ class Auth extends BaseController
         $societe = $this->request->getVar('societe');
         $telephone = $this->request->getVar('telephone');
         $bio = $this->request->getVar('bio');
-        $grade = $this->request->getVar('grade');
-
+        if($this->request->getVar('grade')){
+            $grade = $this->request->getVar('grade');
+        }
         $bd = new Utilisateur();
         $query = 'insert into UTILISATEUR (pseudo, nom, prenom, password, societe, bio, email, telephone, img, grade) values (:pseudo:, :nom:, :prenom:, :password:, :societe:, :bio:, :email:, :telephone:, :img:, :grade:)';
         $bd->query($query, [
@@ -86,7 +87,7 @@ class Auth extends BaseController
             'email' => $email,
             'telephone' => $telephone,
             'img' => $img,
-            'grade' => $grade,
+            'grade' => isset($grade) ? $grade : "0",
         ]);
         return redirect()->to(base_url('/accueil'));
     }

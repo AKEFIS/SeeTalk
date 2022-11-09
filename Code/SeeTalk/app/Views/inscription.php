@@ -58,9 +58,8 @@
                             <option value="100" <?= isset($user_data) ? ($user_data['GRADE'] == 100 ? "selected" : "") : "" ?>>Administrateur</option>
                         </select>
                     </div>
-                <?php } else { ?>
-                    <input style="display:none" type="hidden" name="grade" value="<?= isset($user_data) ? $user_data['GRADE'] : "" ?>">
-                <?php } ?>
+                <?php }  ?>
+                    
                 <input type="hidden" name="id" value="<?= isset($id) ? $id : "" ?>">
             </div>
         </div>
