@@ -8,7 +8,7 @@ class Appel extends BaseController{
     public function saisieMdp()
     {
         echo view('template/header');
-        echo view('saisieMdp', $data);
+        echo view('saisieMdp');
         echo view('template/footer');
     }
 
