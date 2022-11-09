@@ -13,7 +13,7 @@ class Pages extends BaseController
         echo view('template/footer');
     }
 
-  
+
 
 
     public function add_contact()
@@ -47,5 +47,17 @@ class Pages extends BaseController
         echo view('template/footer');
     }
 
+    public function mentions_legales()
+    {
+        echo view('template/header');
+        echo view('mentions_legales');
+        echo view('template/footer');
+    }
 
+    public function contact()
+    {
+        echo view('template/header');
+        echo view('contact');
+        echo view('template/footer');
+    }
 }

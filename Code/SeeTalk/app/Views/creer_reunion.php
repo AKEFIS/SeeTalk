@@ -40,8 +40,7 @@
                         if (isset($utilisateurs)) {
                             foreach ($utilisateurs as $row) {
                         ?>
-                                <div class="member" id="<?= $row['PSEUDO'] ?>"><?= $row['NOM'] ?> <?= $row['PRENOM'] ?>
-                                    <div class="plus" id="<?= $row['ID_USER'] ?>">+</div>
+                                <div class="member" id="<?= $row['ID_USER'] ?>" value="<?= $row['PSEUDO'] ?>"><?= $row['NOM'] ?> <?= $row['PRENOM']?><div class="plus">+</div>
                                 </div>
                         <?php
                             }

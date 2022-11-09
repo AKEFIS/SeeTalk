@@ -35,7 +35,7 @@
             ?>
                 <a href="/inscription">Créer un compte</a>
             <?php
-            } else {
+            } else if($session->get('GRADE') == 0) {
             ?>
                 <a href="/inscription">Inscription</a>
             <?php

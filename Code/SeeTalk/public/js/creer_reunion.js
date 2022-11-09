@@ -1,35 +1,42 @@
 let pluses = document.querySelectorAll(".plus");
 let members = document.querySelectorAll(".member");
-let selected = [];
+let selectedNames = [];
 let selectedIds = [];
 let submitButton = document.querySelector("#submit-create-reunion");
+let strSelectedNames = "";
 
 console.log(pluses);
 
 members.forEach((member, index) => {
-  member.addEventListener("click", function () {
-    selectedName = document.getElementById(member.id).id;
-    if (!selected.includes(selectedName)) {
-      selected.push(selectedName);
+  member.querySelector(".plus").addEventListener("click", function () {
+    console.log(member);
+    selectedName = member.firstChild.nodeValue;
+    if (!selectedNames.includes(selectedName)) {
+      selectedNames.push(selectedName);
     } else {
-      selected.splice(selected.indexOf(selectedName), 1);
+      selectedNames.splice(selectedNames.indexOf(selectedName), 1);
     }
-    console.log(selected);
+    // console.log(selectedNames);
 
-    document.getElementById("members-list").textContent =
-      JSON.stringify(selected);
-  });
-});
-
-pluses.forEach((plus, index) => {
-  plus.addEventListener("click", function () {
-    selectedId = document.getElementById(plus.id).id;
+    selectedId = member.id;
     if (!selectedIds.includes(selectedId)) {
       selectedIds.push(selectedId);
     } else {
       selectedIds.splice(selectedIds.indexOf(selectedId), 1);
     }
-    console.log(selectedIds);
+    // console.log(selectedIds);
+
+    strSelectedNames = "";
+    selectedNames.forEach((nom, index) => {
+      strSelectedNames += nom + ", ";
+    })
+    document.getElementById("members-list").textContent = strSelectedNames;
+  });
+});
+
+pluses.forEach((plus, index) => {
+  plus.addEventListener("click", function () {
+    
   });
 });
 
