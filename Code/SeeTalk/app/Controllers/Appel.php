@@ -8,61 +8,36 @@ class Appel extends BaseController{
     public function saisieMdp()
     {
         echo view('template/header');
-        echo view('saisieMdp', $data);
+        echo view('saisieMdp');
         echo view('template/footer');
     }
 
-    public function connexionReunion(){
+    public function statutReunion(){
+        /*VERIFICATION QUE LE PASS SAISIE CORRESPONDE A UNE REUNION*/
         $db= new Reunion;
         $postData = $this->request->getPost();
-        $passreunion=$db->query('select PASSWORD from REUNION where PASSWORD = :pass:', ['password' => $postData['pass']])->getRowArray();
-/*        if $passreunion ==  NUll
+        $infoReunion=$db->query('select id_reunion,date_reunion from REUNION where PASSWORD = :pass:', ['password' => $postData['pass']])->getRowArray();
+/*      if ($infoReunionID ==  NUll)
         {
-            "La réunion n'existe pas";
-            return redirect()->to(base_url('/accueil'));
+            message="La réunion n'existe pas";
+            return redirect()->to(base_url('/appel/message'));
         }
-        if $passreunion != NULL and DATE_REUNION>DATE ACTUELLE
+
+        $dateNow=new \DateTime();
+        $tempsAvance = new \DateTime();
+        $tempsAvance->modify("-15 minutes");
+
+        if ($infoReunionID != NULL and date_reunion>$dateNow-$tempsAvance)
         {
-            "La réunion n'a pas encore commencé";
-            return redirect()->to(base_url('/accueil'));
+            message="La réunion n'a pas encore commencé";
+            return redirect()->to(base_url('/appel/message'));
         }
-        if $passreunion != NULL and DATE_REUNION=<DATE ACTUELLE
+        if ($infoReunionID != NULL and date_reunion=<$dateNow-$tempsAvance)
         {
-            join chatbox of  id_reunion where password de id_reunion= $postData['pass'];
-            return redirect()->to(base_url('/accueil'));
+            $query = 'select nom from UTILISATEUR where id_user = :id_user ;'
+            join chatbox of  $infoReunionID;
+            return redirect()->to(base_url('/appel'));
         }*/
     }
-    public function identificationUser(){    
-    /*exemple connexionReunion:
-        public function postLogin()
-    {
-        $session = session();
-        $login = $this->request->getVar('pseudo');
-        $mdp = $this->request->getVar('mdp');
-        $bd = new Utilisateur();
-        $query = 'select * from UTILISATEUR where pseudo = :pseudo: or email = :email: and validation = 1;';
-        if (preg_match('^@^', $login)) {
-            $result = $bd->query($query, [
-                'pseudo' => '',
-                'email' => $login,
-            ])->getRowArray();
-        } else {
-            $result = $bd->query($query, [
-                'pseudo' => $login,
-                'email' => '',
-            ])->getRowArray();
-        }
-        if (!empty($result)) {
-            if ($mdp == $result['PASSWORD']) {
-                $session->set($result);
-                $session->set(['isLoggedIn' => true]);
-                return redirect()->to(base_url('/accueil'));
-            }
-        } else {
-            $session->set(['isLoggedIn' => false]);
-            return redirect()->to(base_url('/login'));
-        }
-    }
-    */
-    }
+
 }
