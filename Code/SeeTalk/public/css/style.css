@@ -40,6 +40,7 @@ header .mobile {
 header .logo,
 header .logo img {
   height: 100%;
+  margin-right: 15px;
 }
 
 header h1 {
