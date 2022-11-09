@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Utilisateur;
+use mysqli;
 
 class Auth extends BaseController
 {
@@ -72,9 +73,20 @@ class Auth extends BaseController
         $societe = $this->request->getVar('societe');
         $telephone = $this->request->getVar('telephone');
         $bio = $this->request->getVar('bio');
-        $grade = $this->request->getVar('grade');
-
+        if($this->request->getVar('grade')){
+            $grade = $this->request->getVar('grade');
+        }
         $bd = new Utilisateur();
+        $pseudo_rec = "'".$pseudo."'";
+        $verification = 'select count(pseudo) as cout FROM UTILISATEUR WHERE pseudo = '.$pseudo_rec;
+        $rep = $bd->query($verification);
+        foreach($rep->getResult('array') as $row){
+            if($row["cout"] >= 1){
+                setcookie("erreur", 'Pseudo déjà utiliser',time()+1);
+                return redirect()->to(base_url('/inscription'));
+            }
+        }
+
         $query = 'insert into UTILISATEUR (pseudo, nom, prenom, password, societe, bio, email, telephone, img, grade) values (:pseudo:, :nom:, :prenom:, :password:, :societe:, :bio:, :email:, :telephone:, :img:, :grade:)';
         $bd->query($query, [
             'pseudo' => $pseudo,
@@ -86,7 +98,7 @@ class Auth extends BaseController
             'email' => $email,
             'telephone' => $telephone,
             'img' => $img,
-            'grade' => $grade,
+            'grade' => isset($grade) ? $grade : "0",
         ]);
         $name_file = $img->getName();
         $nameExtend = $name_file;
