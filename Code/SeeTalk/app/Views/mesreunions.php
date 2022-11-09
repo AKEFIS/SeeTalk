@@ -18,13 +18,22 @@
                                     <div class="participants">
                                         <?php echo ('- ' . $participant['NOM'] . " " . $participant['PRENOM'] . ", ");
                                         try {
-                                            echo(in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'present' : 'absent');
+                                            echo (in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'present' : 'absent');
                                         } catch (Exception $e) {
                                             echo ('absent');
                                         } ?></div>
                                 </div>
                             <?php } ?>
                             <div class="row">
+                            <?php
+                            if (date("Y-m-d hh:mm:ss") > $reunion['DATE_REUNION']) {
+                            ?>
+                            <a href="/appel" class="link-button"> Rejoindre l'appel</a>
+                            <?php } else {
+                                ?>
+                                La réunion n'a pas encore commencé
+                                <?php
+                            } ?>
                                 <form action="" method="post" id="reunions">
                                     <input type="hidden" name="id_user" value="<?php echo (session('ID_USER')); ?>">
                                     <input type="hidden" name="id_reunion" value="<?php echo ($reunion['ID_REUNION']); ?>">
@@ -32,7 +41,7 @@
                                 </form>
                             </div>
                         </div>
-                    <?php }?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
