@@ -66,7 +66,7 @@ class Auth extends BaseController
         $pseudo = $this->request->getVar('pseudo');
         $email = $this->request->getVar('email');
         $mdp = $this->request->getVar('mdp');
-        $img = $this->request->getVar('img');
+        $img = $this->request->getFile('img');
         $nom = $this->request->getVar('nom');
         $prenom = $this->request->getVar('prenom');
         $societe = $this->request->getVar('societe');
@@ -89,6 +89,9 @@ class Auth extends BaseController
             'img' => $img,
             'grade' => isset($grade) ? $grade : "0",
         ]);
+        $name_file = $img->getName();
+        $nameExtend = $name_file;
+        $img->move("img/");
         return redirect()->to(base_url('/accueil'));
     }
 

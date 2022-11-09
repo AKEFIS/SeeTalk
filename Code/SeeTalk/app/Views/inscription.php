@@ -1,6 +1,6 @@
     <form action="<?php if (isset($single)) {
                         echo ("/modifier/single/" . $session->get('ID_USER'));
-                    } ?>" method="post" id="connexion" class=" inscription">
+                    } ?>" method="post" id="connexion" class=" inscription" enctype="multipart/form-data">
         <h2 class="title"><?= isset($titre) ? $titre : "inscription" ?></h2>
         <div class="col-form">
             <div class="col">
@@ -10,19 +10,23 @@
                 </div>
                 <div class="label-input">
                     <label for="email">E-Mail:</label>
-                    <input type="text" name="email" value="<?= isset($user_data) ? $user_data['EMAIL'] : "" ?>">
+                    <input type="mail" name="email" value="<?= isset($user_data) ? $user_data['EMAIL'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="mdp">Mot de passe:</label>
-                    <input type="password" name="mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
+                    <input type="password" name="mdp" class="pwd" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="verif-mdp">Vérification Mot de passe:</label>
-                    <input type="password" name="verif-mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
+                    <input type="password" name="verif-mdp" class="pwd" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="img">Photo de profil:</label>
-                    <input type="text" name="img" value="<?= isset($user_data) ? $user_data['IMG'] : "" ?>">
+                    <input type="file" name="img" value="<?= isset($user_data) ? $user_data['IMG'] : "" ?>">
+                </div>
+                <div id="showPassword">
+                    <label for="showPassword">Show Password</label>
+                    <input type="checkbox" onclick="showPassword()">
                 </div>
 
             </div>
@@ -41,11 +45,11 @@
                 </div>
                 <div class="label-input">
                     <label for="telephone">Téléphone:</label>
-                    <input type="text" name="telephone" value="<?= isset($user_data) ? $user_data['TELEPHONE'] : "" ?>">
+                    <input type="tel" name="telephone" value="<?= isset($user_data) ? $user_data['TELEPHONE'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="bio">Description:</label>
-                    <textarea name="bio" style="font-size: 1.3em"><?= isset($user_data) ? $user_data['BIO'] : "" ?></textarea>
+                    <textarea name="bio" resize=style="font-size: 1.3em" style="resize: none;"><?= isset($user_data) ? $user_data['BIO'] : "" ?></textarea>
                 </div>
                 <?php if ($session->get('GRADE') == 100) { ?>
                     <div class="label-input" id="select">
@@ -65,3 +69,16 @@
         </div>
         <input class="submit-button" type="submit" value="Valider">
     </form>
+
+    <script>
+        function showPassword() {
+            const x = document.getElementsByClassName("pwd");
+            for (let elem of x) {
+                if (elem.type === "password") {
+                    elem.type = "text";
+                } else {
+                    elem.type = "password";
+                }
+            }
+        }
+    </script>
