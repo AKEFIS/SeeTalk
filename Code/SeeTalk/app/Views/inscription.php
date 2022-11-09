@@ -14,11 +14,11 @@
                 </div>
                 <div class="label-input">
                     <label for="mdp">Mot de passe:</label>
-                    <input type="text" name="mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
+                    <input type="password" name="mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="verif-mdp">Vérification Mot de passe:</label>
-                    <input type="text" name="verif-mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
+                    <input type="password" name="verif-mdp" value="<?= isset($user_data) ? $user_data['PASSWORD'] : "" ?>">
                 </div>
                 <div class="label-input">
                     <label for="img">Photo de profil:</label>
