@@ -101,8 +101,7 @@ class Auth extends BaseController
             'grade' => isset($grade) ? $grade : "0",
         ]);
         $name_file = $img->getName();
-        $nameExtend = $name_file;
-        $img->move("img/");
+        $img->move("img/$pseudo");
         return redirect()->to(base_url('/accueil'));
     }
 
