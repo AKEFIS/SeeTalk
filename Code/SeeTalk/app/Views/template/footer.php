@@ -1,7 +1,7 @@
 </div>
 <footer>
-    <div class="test">
-        <div class="center">
+    <div class="footer_container">
+        <div class="footer_center">
             <a href="/mentions_legales">Mentions légales</a> <br><br>
             <a href="/contactez_nous">Contactez-nous</a>
         </div>
@@ -15,12 +15,13 @@
 </html>
 
 <style>
-    .test {
+    .footer_container {
         height: 200px;
         position: relative;
+        font-size: larger;
     }
 
-    .center {
+    .footer_center {
         margin: 0;
         position: absolute;
         top: 50%;
