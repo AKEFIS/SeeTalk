@@ -38,6 +38,7 @@ class Auth extends BaseController
             if ($mdp == $result['PASSWORD']) {
                 $session->set($result);
                 $session->set(['isLoggedIn' => true]);
+                $session->set(['name' => 'nicolas']);
                 return redirect()->to(base_url('/accueil'));
             }
         } else {

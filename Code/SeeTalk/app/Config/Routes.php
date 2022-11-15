@@ -57,10 +57,15 @@ $routes->post('modifier/(:any)', 'Gestion::postModifier', ['filter' => 'AuthGuar
 
 $routes->get('appel', 'Reunion::appel', ['filter' => 'AuthGuard']);
 
+
+// Utilisateur
 $routes->get('add_contact', 'Pages::add_contact', ['filter' => 'AuthGuard']);
 $routes->get('fiche_user', 'Pages::fiche_user', ['filter' => 'AuthGuard']);
 $routes->get('creation', 'Pages::creation', ['filter' => 'AuthGuard']);
+$routes->get('add_user_img', 'Pages::addImage', ['filter' => 'AuthGuard']);
+$routes->post('insert_user_img', 'Pages::addImagePost');
 
+// Réunion
 $routes->get('mesreunions', 'Reunion::mesreunions', ['filter' => 'AuthGuard']);
 $routes->post('mesreunions', 'Reunion::postMesreunions', ['filter' => 'AuthGuard']);
 $routes->get('creer_reunion', 'Reunion::creer_reunion', ['filter' => 'AuthGuard']);

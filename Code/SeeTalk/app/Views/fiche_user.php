@@ -1,9 +1,8 @@
 <link rel="stylesheet" href="css/user.css">
-
     <div id="container">
         <div class="img-add">
             <div style="overflow: hidden" class="circle"><img style="max-width: 100%; min-height: 100%;" src="<?= isset($user_data['IMG'])? $user_data['IMG'] : "img/cc.png" ?>" alt=""></div>
-            <h3 class="title-font">+ <?= isset($user_data['IMG'])? "modifier" : "Ajouter" ?></h3>
+            <h3 class="title-font addImage"><a href="add_user_img">+ <?= !empty($user_data['IMG'])? "modifier" : "Ajouter" ?></a></h3>
         </div>
         <div class="information">
             <div class="flex-pres">
@@ -32,5 +31,5 @@
         </div>
     </div>
 
-    <script src="./javascript/index.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
 

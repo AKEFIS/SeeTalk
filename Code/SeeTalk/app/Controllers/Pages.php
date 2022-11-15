@@ -40,6 +40,7 @@ class Pages extends BaseController
         ])->getRowArray();
 
         $data['user_data'] = $result;
+        $data['user_data']['IMG'] = './img/'.$data['user_data']['PSEUDO'].'.png';
         $data['session'] = $session;
 
         echo view('template/header');
@@ -59,5 +60,28 @@ class Pages extends BaseController
         echo view('template/header');
         echo view('contact');
         echo view('template/footer');
+    }
+
+    public function addImage(){
+        echo view('template/header');
+        echo view('add_profileImg');
+        echo view('template/footer');
+    }
+
+    public function addImagePost(){
+        $bd = new Utilisateur();
+        $pseudo = $_POST['name'];
+        $img = $this->request->getFile('img');
+        $name = $img->getName();
+
+        $querry = "UPDATE UTILISATEUR SET IMG = '$name' WHERE pseudo = '$pseudo'";
+        $bd->query($querry);
+        $img->move("img",$pseudo.".png");
+
+        $query = "select * from UTILISATEUR where PSEUDO = '$pseudo'";
+        $result = $bd->query($query)->getRowArray();
+        $data['user_data'] = $result;
+        $data['user_data']['IMG'] = './img/'.$name.'.png';
+        return redirect()->to(base_url('/fiche_user'));
     }
 }
