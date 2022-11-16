@@ -289,6 +289,21 @@ form .submit-button-reunion:hover {
   height: 70vh;
 }
 
+div.ajouter-user{
+  margin-top: 50px;
+}
+
+a.ajouter-user{
+  display: block;
+  width: 100px;
+  margin-inline: auto;
+}
+
+a.ajouter-user img{
+  background-color: rgb(223, 223, 233);
+  border-radius: 100%;
+}
+
 table.utilisateurs {
   display: block;
   border: none;

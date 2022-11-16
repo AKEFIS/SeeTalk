@@ -54,4 +54,4 @@
         </tbody>
     </table>
 </div>
-<a href="inscription"><img src="img/plus.svg" alt="" class="ajouter_user" style="max-width: 100px" id="<?= $utilisateur['ID_USER'] ?>"></a>
+<div class="ajouter-user"><a href="inscription" class="ajouter-user"><img src="img/plus.svg" alt="" class="ajouter-user" style="max-width: 100px" id="<?= $utilisateur['ID_USER'] ?>"></a></div>
