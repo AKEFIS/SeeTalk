@@ -20,7 +20,7 @@
                                         try {
                                             echo (in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'sera present' : 'sera absent');
                                         } catch (Exception $e) {
-                                            echo ('absent');
+                                            echo ('sera absent');
                                         } ?></div>
                                 </div>
                             <?php } ?>
@@ -37,7 +37,7 @@
                                 <form action="" method="post" id="reunions">
                                     <input type="hidden" name="id_user" value="<?php echo (session('ID_USER')); ?>">
                                     <input type="hidden" name="id_reunion" value="<?php echo ($reunion['ID_REUNION']); ?>">
-                                    <input class="submit-button-reunion" type="submit" name="presence" value="<?= in_array($reunion['ID_REUNION'], $present[session()->get('ID_USER')]) ? 'present' : 'absent' ?>">
+                                    <input class="submit-button-reunion" type="submit" name="presence" value="<?= in_array($reunion['ID_REUNION'], $present[session()->get('ID_USER')]) ? 'sera present' : 'sera absent' ?>">
                                 </form>
                             </div>
                         </div>
