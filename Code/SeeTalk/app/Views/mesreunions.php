@@ -18,7 +18,7 @@
                                     <div class="participants">
                                         <?php echo ('- ' . $participant['NOM'] . " " . $participant['PRENOM'] . ", ");
                                         try {
-                                            echo (in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'present' : 'absent');
+                                            echo (in_array($participant['ID_USER'], $reunions_present[$reunion['ID_REUNION']]) ? 'sera present' : 'sera absent');
                                         } catch (Exception $e) {
                                             echo ('absent');
                                         } ?></div>
