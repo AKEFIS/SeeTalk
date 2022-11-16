@@ -25,11 +25,11 @@
 
         <h3><b>HORAIRES</b></h3>
 
-        <p>Lundi : 8h - 12h / 14h - 18h</p>
-        <p>Mardi : 8h - 12h / 14h - 18h</p>
-        <p>Mercredi : 8h - 12h / 14h - 18h</p>
-        <p>Jeudi : 8h - 12h / 14h - 18h</p>
-        <p>Vendredi : 8h - 12h / 14h - 18h</p>
+        <p>Lundi : 8h - 12h | 14h - 18h</p>
+        <p>Mardi : 8h - 12h | 14h - 18h</p>
+        <p>Mercredi : 8h - 12h | 14h - 18h</p>
+        <p>Jeudi : 8h - 12h | 14h - 18h</p>
+        <p>Vendredi : 8h - 12h | 14h - 18h</p>
         <p>Samedi : Fermé</p>
         <p>Dimanche : Fermé</p>
 
