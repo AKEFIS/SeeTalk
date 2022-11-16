@@ -60,6 +60,7 @@ header img.menu-button {
   display: block;
   transition: all 0.5s ease;
   user-select: none;
+  cursor:pointer;
 }
 
 header img.menu-button.active {
