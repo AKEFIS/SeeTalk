@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/group.css">
-<script defer src="http://seetalk.lan/js/creer_reunion.js"></script>
+<script defer src="./js/creer_reunion.js"></script>
 
 <div class="container">
     <div id="container">
@@ -40,7 +40,7 @@
                         if (isset($utilisateurs)) {
                             foreach ($utilisateurs as $row) {
                         ?>
-                                <div class="member" id="<?= $row['ID_USER'] ?>" value="<?= $row['PSEUDO'] ?>"><?= $row['NOM'] ?> <?= $row['PRENOM']?><div class="plus">+</div>
+                                <div class="member" id="<?= $row['ID_USER'] ?>" value="<?= $row['PSEUDO'] ?>"><?= $row['NOM'] ?> <?= $row['PRENOM'] ?><div class="plus">+</div>
                                 </div>
                         <?php
                             }

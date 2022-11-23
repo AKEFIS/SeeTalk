@@ -10,7 +10,7 @@
 </head>
 
 <body>
-   
+
 
     <div id="container">
         <div class="recherche">
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <script src="./javascript/index.js" type="text/javascript"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
 
 </body>
 
