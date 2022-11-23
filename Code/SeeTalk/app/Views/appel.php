@@ -5,7 +5,23 @@ if (!isset($_SESSION['name'])) {
 ?>
     <div class="videocall">
         <div class="webRTC">
-            <img src="img/cc.png" />
+            <h2>Réception</h2>
+            <video id="receiver-video" width=100% height=300px></video>
+            <p>
+                <button id="startVid">Démarrer la conversation</button>
+            </p>
+            <textarea id="offer"></textarea>
+        </div>
+        <div class="webRTC">
+            <h2>Réception</h2>
+            <video id="emitter-video" width=100% height=300px></video> 
+            <p>
+                <button id="receive">Recevoir la conversation</button>
+            </p>
+            <form id="incoming">
+                <textarea ></textarea>
+                <button type="submit">Enregistrer l'offre</button>
+            </form>
         </div>
         <div class="cadre_groupe">
             <div class="titre_message">
@@ -51,7 +67,8 @@ if (!isset($_SESSION['name'])) {
         <?php
     }
         ?>
-
+<script src="appel.js"></script>
+<script src="simplePeer.js"></script>
     <?php
 
 
