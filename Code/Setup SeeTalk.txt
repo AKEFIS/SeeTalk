@@ -32,9 +32,8 @@ Setup sur le serveur du lycée
 
 1. Copiez le dossier /var/www sur la VM
 
-2. Activer mod_rewrite "a2enmod rewrite" puis "service apache2 restart"
+2. Activer mod_rewrite "a2enmod rewrite"
 
 3. Remplacer "/etc/apache2/sites-available/000-default.conf" par celui du dossier
 
 4. Se placer dans le dossier "/var/www" et éxecuter "chmod -R 755 writable/" "chown -R www-data:www-data writable/" puis "service apache2 restart"
-
