@@ -66,7 +66,7 @@ class Database extends Config
 
         'DSN'      => '',
 
-        'hostname' => 'mysql-seetalk.alwaysdata.net',
+        'hostname' => '172.28.36.6',
 
         'username' => 'seetalk',
 
